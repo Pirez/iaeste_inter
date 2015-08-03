@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/johanpbj/iaeste_inter/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/Edvard/AndroidStudioProjects/iaeste_inter/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string-array name="filename_list">
         <item>tmp_medlemmer.d</item>
@@ -8,12 +8,12 @@
         <item>tmp_kalender.d</item>
         <item>tmp_info.d</item>
     </string-array>
-    <!-- From: file:/Users/johanpbj/iaeste_inter/app/src/main/res/values/array.xml -->
+    <!-- From: file:/C:/Users/Edvard/AndroidStudioProjects/iaeste_inter/app/src/main/res/values/array.xml -->
     <eat-comment/>
     <array name="item">
         <item>test1</item>
     </array>
-    <!-- From: file:/Users/johanpbj/iaeste_inter/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/Edvard/AndroidStudioProjects/iaeste_inter/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string-array name="malform">
         <item>Bokmål</item>
@@ -74,11 +74,11 @@
     <string-array name="valg_LK">
         <item>Alle</item>
     </string-array>
-    <!-- From: file:/Users/johanpbj/iaeste_inter/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/C:/Users/Edvard/AndroidStudioProjects/iaeste_inter/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <color name="custom_theme_color">#ffffff</color>
     <color name="titlebar_color">#00ced1</color>
-    <!-- From: file:/Users/johanpbj/iaeste_inter/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/Edvard/AndroidStudioProjects/iaeste_inter/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="ValgLK">IAESTE event</string>
     <string name="ValgMalform">Velg målform</string>
@@ -167,7 +167,7 @@
     <string name="url_check_member">http://iaeste.no/playground/android_app/portal/check_member</string>
     <string name="url_pictures_member">https://www.iaeste.no/portal/files/casual/intern/profiles/</string>
     <string name="version">Versjon:</string>
-    <!-- From: file:/Users/johanpbj/iaeste_inter/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/C:/Users/Edvard/AndroidStudioProjects/iaeste_inter/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="BlackTheme" parent="android:Theme.Black"/>
     <style name="LightTheme" parent="android:Theme.Light">

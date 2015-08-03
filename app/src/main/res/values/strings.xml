@@ -150,7 +150,7 @@
         <item>Min tabell</item>
     </string-array>
 
-    <string-array name="string_main">
+    <string-array name="string_main" translatable="false">
         <item>Sommerjobb</item>
         <item>Næringslivsdager</item>
         <item>Mottak</item>

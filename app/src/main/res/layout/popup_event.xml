@@ -16,7 +16,7 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:layout_alignParentLeft="true"
-            android:layout_below="@+id/text_popup_event_tom"
+
             android:padding="10sp"
             android:visibility="gone"
             >
