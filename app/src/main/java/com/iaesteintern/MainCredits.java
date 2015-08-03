@@ -33,6 +33,7 @@ public class MainCredits extends Activity {
             public void onClick(View a) {
 
                 //TODO: fiks problemet her, klager på integer (?)
+                //
                 String endring = getString(R.string.update_info);
 
                 try {
