@@ -34,6 +34,7 @@ public class MainCredits extends Activity {
 
                 //TODO: fiks problemet her, klager på integer (?)
                 //
+                //
                 String endring = getString(R.string.update_info);
 
                 try {
