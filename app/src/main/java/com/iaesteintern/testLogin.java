@@ -227,30 +227,45 @@ public class testLogin extends Activity implements Runnable {
             dialog.show();
         }
 
-        @Override
-        protected String doInBackground(Void... ignored) {
+                @Override
+                protected String doInBackground(Void... ignored) {
 
-            String returnMessage = null;
-            SystemClock.sleep(1200);
+                    String returnMessage = null;
+                    //SystemClock.sleep(1200);
+
+                    try {
+
+                        returnMessage = startCheck();
+
+                    } catch (Exception e) {
+                        //returnMessage = e.getMessage();
+                    }
 
 
-            return returnMessage;
-        }
+                    return returnMessage;
+                }
 
-        @Override
-        protected void onPostExecute(String message) {
-            String returnMessage = null;
-
-            try {
-
-                startCheck();
-
-            } catch (Exception e) {
-                //returnMessage = e.getMessage();
-            }
-            dialog.dismiss();
-            if (message != null) {
-                // process the error (show alert etc)
+                @Override
+                protected void onPostExecute(String message) {
+                    String returnMessage = null;
+                    String error = "error";
+                    if (message.matches(error)) {
+                        Toast.makeText(testLogin.this, R.string.login_03, Toast.LENGTH_LONG).show();
+                        SharedPreferences.Editor editor = app_preferences.edit();
+                        editor.putBoolean("auth", false);
+                        editor.commit();
+                    } else {
+                        Toast.makeText(testLogin.this, "Velkommen " + message, Toast.LENGTH_LONG).show();
+                        SharedPreferences.Editor editor = app_preferences.edit();
+                        editor.putString("name", message);
+                        editor.putBoolean("auth", true);
+                        editor.commit();
+                        //Go too next screen
+                        Move_to_next(); //Går inn
+                    }
+                    dialog.dismiss();
+                    if (message != null) {
+                        // process the error (show alert etc)
                 //Log.e("StartPaymentAsyncTask", String.format("I received an error: %s", message));
             } else {
                 //Log.i("StartPaymentAsyncTask", "No problems");
@@ -258,43 +273,42 @@ public class testLogin extends Activity implements Runnable {
         }
     }
 
-    public void startCheck() throws Exception {
-        try {
-            httpclient = new DefaultHttpClient();
+
+
+    public String startCheck() throws Exception {
+
+
+
+            String tekst_php = "";
+            try {
+                httpclient = new DefaultHttpClient();
             Log.e("CODE0101", name);
             name = toHex(name);   //Convert to HEX
 
             httppost = new HttpPost("http://iaeste.no/playground/android_app/portal/check_member.php?det1=" + name + "&det2=" + pass);
             // Add your data
             nameValuePairs = new ArrayList<NameValuePair>(2);
-            nameValuePairs.add(new BasicNameValuePair("det1", name.trim()));
+                Log.e("ValuePairs", name);
+                nameValuePairs.add(new BasicNameValuePair("det1", name.trim()));
             nameValuePairs.add(new BasicNameValuePair("det2", pass.trim()));
-            httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+                Log.e("ValuePairs LAGT INN", name + pass);
+               httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+                Log.e("Vafdsfds", name + pass);
             ResponseHandler<String> responseHandler = new BasicResponseHandler();
-            String tekst_php = httpclient.execute(httppost, responseHandler);
-            System.out.println("Response : " + response);
+                Log.e("ValuePairs LAGT INN", name);
+                tekst_php = httpclient.execute(httppost, responseHandler);
+                Log.e("teksphp ok", tekst_php);
 
-            String error = "error"; //Return val
 
+                 //Return val
             //Confirm the user (//TODO Should change it in the future? Easy to hack!)
-            if (tekst_php.matches(error)) {
-                Toast.makeText(testLogin.this, R.string.login_03, Toast.LENGTH_LONG).show();
-                SharedPreferences.Editor editor = app_preferences.edit();
-                editor.putBoolean("auth", false);
-                editor.commit();
-            } else {
-                Toast.makeText(testLogin.this, "Velkommen " + tekst_php, Toast.LENGTH_LONG).show();
-                SharedPreferences.Editor editor = app_preferences.edit();
-                editor.putString("name", tekst_php);
-                editor.putBoolean("auth", true);
-                editor.commit();
-                //Go too next screen
-                Move_to_next(); //Går inn
-            }
+
             inputStream.close();
         } catch (Exception e) {
             //Toast.makeText(testLogin.this, "error" + e.toString(), Toast.LENGTH_SHORT).show();
         }
+        return tekst_php;
+
     }
 
     private class Startcheckglemtpassord extends AsyncTask<Void, Void, String> {

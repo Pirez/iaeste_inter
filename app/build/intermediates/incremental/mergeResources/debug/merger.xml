@@ -22,7 +22,7 @@
         <item>Tromsø</item>
         <item>Stavanger</item>
         <item>Ås</item>
-    </string-array><string name="login_title">IAESTE Norge - Internapp</string><string-array name="string_main">
+    </string-array><string name="login_title">IAESTE Norge - Internapp</string><string-array name="string_main" translatable="false">
         <item>Sommerjobb</item>
         <item>Næringslivsdager</item>
         <item>Mottak</item>
@@ -83,7 +83,7 @@
         <item>Tromsø</item>
         <item>Stavanger</item>
         <item>Ås</item>
-    </string-array><string name="update_text_02">Updating</string><string name="bk_01">Top 5 LK</string><string name="bk_02">Your place</string><string name="bk_03">User does not exist, please try again</string><string-array name="string_kalender_events_weekends">
+    </string-array><string name="url_pictures_member">https://www.iaeste.no/portal/files/casual/intern/profiles/</string><string name="update_text_02">Updating</string><string name="bk_01">Top 5 LK</string><string name="bk_02">Your place</string><string name="bk_03">User does not exist, please try again</string><string-array name="string_kalender_events_weekends">
         <item>Arctic Week</item>
         <item>Bergen Weekend</item>
         <item>Oslo Weekend</item>
@@ -91,7 +91,12 @@
         <item>Trondheim Weekend</item>
         <item>Tromsø Weekend</item>
         <item>Stavanger Weekend</item>
-    </string-array><string name="title_05">BK</string><string name="bk_05">Your are at the place</string><string name="bk_04">You place national:</string><string name="bk_07">members so does BK.</string><string name="login_09">Log in</string><string name="title_02">IAESTE intern</string><string name="bk_06">of totally</string><string name="login_08">Password</string><string name="login_07">Email</string><string name="login_06">Remember me</string><string name="login_05">You are logged in</string><string name="login_04">Logged out...</string><string name="login_03">Username and password, is wrong</string><string name="login_01">Please log in</string><string name="kalender_01">Place:</string><string name="pic_03">The person do not have a picture</string><string name="kalender_02">Date:</string><string name="kalender_03">Save</string><string name="bk_topten_05"/><string name="kalender_04">Back</string><string name="pic_02">The person has picture, activate "auto picture" in settings</string><string name="kalender_05">Choose event</string><string name="ValgMalform">Choose language</string><string name="lk_1">LC</string><string name="bk_topten_04"/><string-array name="string_main_intern">
+    </string-array><string name="title_05">BK</string><string name="bk_05">Your are at the place</string><string name="bk_04">You place national:</string><string name="bk_07">members so does BK.</string><string name="login_09">Log in</string><string name="title_02">IAESTE intern</string><string name="bk_06">of totally</string><string name="login_08">Password</string><string name="login_07">Email</string><string name="login_06">Remember me</string><string name="login_05">You are logged in</string><string name="login_04">Logged out...</string><string-array name="url_list">
+        <item>http://iaeste.no/playground/android_app/portal/member.php</item>
+        <item>http://iaeste.no/playground/android_app/portal/jobraising.php</item>
+        <item>http://iaeste.no/playground/android_app/kalender</item>
+        <item>http://iaeste.no/playground/android_app_0001/update_0_9_4_2.d</item>
+    </string-array><string name="login_03">Username and password, is wrong</string><string name="login_01">Please log in</string><string name="kalender_01">Place:</string><string name="pic_03">The person do not have a picture</string><string name="kalender_02">Date:</string><string name="kalender_03">Save</string><string name="bk_topten_05"/><string name="kalender_04">Back</string><string name="pic_02">The person has picture, activate "auto picture" in settings</string><string name="kalender_05">Choose event</string><string name="ValgMalform">Choose language</string><string name="lk_1">LC</string><string name="bk_topten_04"/><string-array name="string_main_intern">
         <item>BK</item>
         <item>Calender</item>
         <item>Member list</item>
@@ -115,7 +120,13 @@
         <item>Trondheim</item>
         <item>Ås</item>
         <item>National</item>
-    </string-array><string name="soon">Does not work, yet....</string><string name="errorcode_01">IO feil! Code: 01</string><string name="back">Back</string><string name="errorcode_03">You dont have internet connection.</string><string name="credits_10"/><string name="errorcode_02">Error saving contact!</string><string name="login_title">IAESTE Norway - Internapp</string><string name="login_25">Logged out</string><string name="login_24">Logged out (Reset)</string><string name="login_23">Password:</string><string name="login_22">Username</string></file><file path="C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\res\values-nn\strings.xml" qualifiers="nn"><string name="version">Versjon:</string><string name="login_18">Mail sendt</string><string name="login_19">Logget inn som:</string><string name="login_17">Bruker eksisterer ikkje</string><string name="login_16">Vennligst fyll ut felta</string><string name="login_15">Eg er glemsk!</string><string name="login_14">Sjekker.....</string><string-array name="string_LK_BK">
+    </string-array><string name="soon">Does not work, yet....</string><string name="errorcode_01">IO feil! Code: 01</string><string name="back">Back</string><string name="errorcode_03">You dont have internet connection.</string><string name="credits_10"/><string name="errorcode_02">Error saving contact!</string><string name="url_check_member">http://iaeste.no/playground/android_app/portal/check_member</string><string name="login_title">IAESTE Norway - Internapp</string><string name="login_25">Logged out</string><string name="update_info">- Mulighet å lagre kontakter \n - Fikset en bug i Android 2.X ver, \n - Lagt inn random bilder fra portalen \nDato:24.02.13
+    </string><string name="login_24">Logged out (Reset)</string><string name="login_23">Password:</string><string name="login_22">Username</string></file><file path="C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\res\values-nn\strings.xml" qualifiers="nn"><string name="url_pictures_member">https://www.iaeste.no/portal/files/casual/intern/profiles/</string><string-array name="url_list">
+        <item>http://iaeste.no/playground/android_app/portal/member.php</item>
+        <item>http://iaeste.no/playground/android_app/portal/jobraising.php</item>
+        <item>http://iaeste.no/playground/android_app/kalender</item>
+        <item>http://iaeste.no/playground/android_app_0001/update_0_9_4_2.d</item>
+    </string-array><string name="version">Versjon:</string><string name="login_18">Mail sendt</string><string name="login_19">Logget inn som:</string><string name="login_17">Bruker eksisterer ikkje</string><string name="login_16">Vennligst fyll ut felta</string><string name="login_15">Eg er glemsk!</string><string name="login_14">Sjekker.....</string><string-array name="string_LK_BK">
         <item>Bergen</item>
         <item>Grimstad</item>
         <item>Oslo</item>
@@ -140,7 +151,7 @@
     </string-array><string name="medlem_4">Send SMS</string><string name="credits_06">Johan Pires Bjørgen (LK Oslo)</string><string name="bk_05">Du ligger på plassen</string><string name="credits_05">Utvikler:</string><string name="down_01">Laster ned data</string><string name="medlem_6">Lagra kontakt</string><string name="bk_06">av totalt</string><string name="credits_04">Vil gjerne nevne Gunnar Raaen (Fysikk ,UiO) som lærte meg java programmering og hjalp meg
         mye med infrastrukturen, Matias Holte (LK Oslo) som hjalp meg med å behandle data fra internsidene, tusen takk
         for all hjelpen!
-    </string><string name="back">Tilbake</string><string name="credits_03">I utviklingen til appen ble IntelliJ og Android SDK brukt.</string><string name="credits_02">Om IAESTE appen</string><string name="credits_01">Legg inn tips/forbedringer/bugs her:</string><string name="app_name">IAESTE</string><string name="errorcode_02">Feil, ble ikkje lagret!</string><string name="instilinnger_03">auto oppdatering av bilete (Medlemlister)</string><string name="errorcode_01">IO feil! Kode: 01</string><string name="instilinnger_02">Målform</string><string name="instilinnger_01">Innstillingar</string><string name="bk_03">Brukeren eksisterer ikkje, vennligst prøv på nytt</string><string name="login_07">Email</string><string name="bk_04">Din plassering nasjonalt:</string><string name="login_08">Passord</string><string name="bk_01">Top 5 LK</string><string name="login_09">Logg inn</string><string name="bk_02">Din plassering</string><string name="loginkoble_01">Kobler seg til serveren......</string><string name="instilinnger_04">Lagre innstillinger</string><string name="login_04">Logget av...</string><string-array name="string_main_intern">
+    </string><string name="back">Tilbake</string><string name="credits_03">I utviklingen til appen ble IntelliJ og Android SDK brukt.</string><string name="credits_02">Om IAESTE appen</string><string name="credits_01">Legg inn tips/forbedringer/bugs her:</string><string name="app_name">IAESTE</string><string name="errorcode_02">Feil, ble ikkje lagret!</string><string name="instilinnger_03">auto oppdatering av bilete (Medlemlister)</string><string name="errorcode_01">IO feil! Kode: 01</string><string name="instilinnger_02">Målform</string><string name="instilinnger_01">Innstillingar</string><string name="bk_03">Brukeren eksisterer ikkje, vennligst prøv på nytt</string><string name="login_07">Email</string><string name="bk_04">Din plassering nasjonalt:</string><string name="login_08">Passord</string><string name="bk_01">Top 5 LK</string><string name="login_09">Logg inn</string><string name="instilinnger_05">Lagret!</string><string name="bk_02">Din plassering</string><string name="loginkoble_01">Kobler seg til serveren......</string><string name="instilinnger_04">Lagre innstillinger</string><string name="login_04">Logget av...</string><string-array name="string_main_intern">
         <item>BK</item>
         <item>Kalender</item>
         <item>Medlemslister</item>
@@ -149,11 +160,12 @@
         <item>Top10 og Top3 LK</item>
         <item>Agreements</item>
         <item>Min tabell</item>
-    </string-array><string name="update_text_02">Oppdatere</string><string name="login_title">IAESTE Norge - Internapp</string><string name="login_01">Vennligst logg inn</string><string name="medlem_1">medlemmer</string><string name="medlem_2">Person lagret i kontaktar</string><string name="pic_03">Personen har ikkje bildet</string><string name="medlem_3">Ring</string><string name="pic_02">Personen har bildet, for å se det aktiver "Auto Bilde" i innstillinger</string><string name="bk_topten_04"/><string name="soon">Fungerer ikkje, kommer i nær fremtid</string><string name="bk_topten_05"/><string-array name="malform">
+    </string-array><string name="update_text_02">Oppdatere</string><string name="login_title">IAESTE Norge - Internapp</string><string name="login_01">Vennligst logg inn</string><string name="update_info">- Mulighet å lagre kontakter \n - Fikset en bug i Android 2.X ver, \n - Lagt inn random bilder fra portalen \nDato:24.02.13
+    </string><string name="medlem_1">medlemmer</string><string name="url_check_member">http://iaeste.no/playground/android_app/portal/check_member</string><string name="medlem_2">Person lagret i kontaktar</string><string name="pic_03">Personen har ikkje bildet</string><string name="medlem_3">Ring</string><string name="pic_02">Personen har bildet, for å se det aktiver "Auto Bilde" i innstillinger</string><string name="bk_topten_04"/><string name="soon">Fungerer ikkje, kommer i nær fremtid</string><string name="bk_topten_05"/><string-array name="malform">
         <item>Bokmål</item>
         <item>Nynorsk</item>
         <item>English</item>
-    </string-array><string name="bk_topten_02">poeng per medlem</string><string name="bk_topten_03"/><string name="bk_topten_01">Gjennomsnittet er:</string><string name="credits_10"/><string name="errorcode_03">Ikkje tilgang på internett, prøv igjen senere.</string><string name="credits_08">Ta kontakt hvis du har tips til forbedringer eller lurer på noko annet.</string><string name="credits_09">Info om versjonen</string><string-array name="valg_LK">
+    </string-array><string name="bk_topten_02">poeng per medlem</string><string name="bk_topten_03"/><string name="bk_topten_01">Gjennomsnittet er:</string><string name="credits_10"/><string name="errorcode_03">Ikkje tilgang på internett, prøv igjen senere.</string><string name="lk_1">LK</string><string name="credits_08">Ta kontakt hvis du har tips til forbedringer eller lurer på noko annet.</string><string name="credits_09">Info om versjonen</string><string-array name="valg_LK">
         <item>Alle</item>
     </string-array><string-array name="string_LK">
         <item>Bergen</item>
@@ -163,6 +175,6 @@
         <item>Tromso</item>
         <item>Stavanger</item>
         <item>Ås</item>
-    </string-array><string name="login_20">Logg inn:</string><string name="login_21">Brukernavn:</string><string name="login_22">Brukernavn</string><string name="login_23">Passord:</string><string name="login_24">Logg ut (Reset)</string><string name="login_25">Logg ut</string></file><file path="C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\res\values-v11\styles.xml" qualifiers="v11"><style name="LightTheme" parent="android:Theme.Holo.Light">
-    </style></file><file path="C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\res\values-v22\styles.xml" qualifiers="v22"><style name="LightTheme" parent="android:Theme.Material.Light.DarkActionBar">
+    </string-array><string name="kalender_02">Dato:</string><string name="kalender_03">Lagre</string><string name="kalender_04">Tilbake</string><string name="kalender_05">Velg event</string><string name="kalender_01">Sted:</string><string name="login_20">Logg inn:</string><string name="login_21">Brukernavn:</string><string name="login_22">Brukernavn</string><string name="login_23">Passord:</string><string name="login_24">Logg ut (Reset)</string><string name="login_25">Logg ut</string></file><file path="C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\res\values-v11\styles.xml" qualifiers="v11"><style name="LightTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+    </style></file><file path="C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\res\values-v22\styles.xml" qualifiers="v22"><style name="LightTheme" parent="android:Theme.Holo.Light.DarkActionBar">
     </style></file></source><source path="C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\build\generated\res\rs\debug"/><source path="C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\build\generated\res\generated\debug"/></dataSet><dataSet config="debug"><source path="C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\debug\res"/></dataSet><mergedItems/></merger>

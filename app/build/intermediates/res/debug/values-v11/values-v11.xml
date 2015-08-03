@@ -2,6 +2,6 @@
 <resources>
     <!-- From: file:/C:/Users/Edvard/AndroidStudioProjects/iaeste_inter/app/src/main/res/values-v11/styles.xml -->
     <eat-comment/>
-    <style name="LightTheme" parent="android:Theme.Holo.Light">
+    <style name="LightTheme" parent="android:Theme.Holo.Light.DarkActionBar">
     </style>
 </resources>

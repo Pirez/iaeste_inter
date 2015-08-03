@@ -51,6 +51,12 @@
         <item>Calender</item>
         <item>Member list</item>
     </string-array>
+    <string-array name="url_list">
+        <item>http://iaeste.no/playground/android_app/portal/member.php</item>
+        <item>http://iaeste.no/playground/android_app/portal/jobraising.php</item>
+        <item>http://iaeste.no/playground/android_app/kalender</item>
+        <item>http://iaeste.no/playground/android_app_0001/update_0_9_4_2.d</item>
+    </string-array>
     <string-array name="valg_LK">
         <item>All</item>
     </string-array>
@@ -136,6 +142,10 @@
     <string name="soon">Does not work, yet....</string>
     <string name="title_02">IAESTE intern</string>
     <string name="title_05">BK</string>
+    <string name="update_info">- Mulighet å lagre kontakter \n - Fikset en bug i Android 2.X ver, \n - Lagt inn random bilder fra portalen \nDato:24.02.13
+    </string>
     <string name="update_text_02">Updating</string>
+    <string name="url_check_member">http://iaeste.no/playground/android_app/portal/check_member</string>
+    <string name="url_pictures_member">https://www.iaeste.no/portal/files/casual/intern/profiles/</string>
     <string name="version">Version:</string>
 </resources>
