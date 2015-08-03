@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent"
+             android:stretchColumns="1">
+
+
+    <TableRow>
+        <TextView
+                android:text="1."
+                android:padding="1dip"
+                android:textSize="14sp"/>
+        <TextView
+                android:id="@+id/text_mainbk_first_place_lk_top3"
+                android:text=""
+                android:padding="1dip"
+                android:textSize="14sp"/>
+
+        <TextView
+                android:id="@+id/text_mainbk_first_place_poeng_top3"
+                android:text=""
+                android:padding="1dip"
+                android:textSize="14sp"/>
+
+    </TableRow>
+
+    <TableRow>
+        <TextView
+                android:text="2."
+                android:padding="1dip"
+                android:textSize="14sp"/>
+        <TextView
+                android:id="@+id/text_mainbk_second_place_lk_top3"
+                android:text=""
+                android:padding="1dip"
+                android:textSize="14sp"/>
+
+        <TextView
+                android:id="@+id/text_mainbk_second_place_poeng_top3"
+                android:text=""
+                android:padding="1dip"
+                android:textSize="14sp"/>
+
+    </TableRow>
+
+    <TableRow>
+        <TextView
+                android:text="3."
+                android:padding="1dip"
+                android:textSize="14sp"/>
+        <TextView
+                android:id="@+id/text_mainbk_third_place_lk_top3"
+                android:text=""
+                android:padding="1dip"
+                android:textSize="14sp"/>
+
+        <TextView
+                android:id="@+id/text_mainbk_third_place_poeng_top3"
+                android:text=""
+                android:padding="1dip"
+                android:textSize="14sp"/>
+
+    </TableRow>
+
+    <TableRow>
+        <TextView
+                android:text="4."
+                android:padding="1dip"
+                android:textSize="14sp"/>
+        <TextView
+                android:id="@+id/text_mainbk_fourth_place_lk_top3"
+                android:text=""
+                android:padding="1dip"
+                android:textSize="14sp"/>
+
+        <TextView
+                android:id="@+id/text_mainbk_fourth_place_poeng_top3"
+                android:text=""
+                android:padding="1dip"
+                android:textSize="14sp"/>
+
+    </TableRow>
+
+    <TableRow>
+        <TextView
+                android:text="5."
+                android:padding="1dip"
+                android:textSize="14sp"/>
+        <TextView
+                android:id="@+id/text_mainbk_five_place_lk_top3"
+                android:text=""
+                android:padding="1dip"
+                android:textSize="14sp"/>
+
+        <TextView
+                android:id="@+id/text_mainbk_five_place_poeng_top3"
+                android:text=""
+                android:padding="1dip"
+                android:textSize="14sp"/>
+
+    </TableRow>
+
+
+</TableLayout><!-- From: file:/Users/johanpbj/Dropbox/IAESTEappv2015/app/src/main/res/layout/dialog_bktop3lk.xml -->

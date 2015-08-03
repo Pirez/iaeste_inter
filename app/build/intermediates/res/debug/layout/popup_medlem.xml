@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/popup_menu_root"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+        >
+
+    <TextView
+            android:id="@+id/text_popup_overskrift"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffffff"
+            android:text=""
+            android:textSize="4sp"
+            android:lines="2"
+            />
+
+    <ImageView
+            android:id="@+id/bilde_popup_kalender"
+            android:layout_width="200sp"
+            android:layout_height="200sp"
+            android:layout_below="@id/text_popup_overskrift"
+            android:paddingLeft="4sp"
+            android:layout_centerHorizontal="true"
+
+
+            />
+
+    <ProgressBar
+            android:id="@+id/progress_popup"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.ProgressBar.Small"
+            android:layout_marginRight="5dp"
+            android:layout_below="@id/bilde_popup_kalender"
+            android:visibility="gone"
+
+            />
+
+    <TextView
+            android:id="@+id/text_popup_navn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="18sp"
+            android:layout_below="@id/progress_popup"
+            />
+    <TextView
+            android:id="@+id/text_popup_tlf"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_below="@id/text_popup_navn"
+            android:textSize="18sp"
+            android:autoLink="phone"
+            />
+    <TextView
+            android:id="@+id/text_popup_email"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="18sp"
+            android:layout_below="@id/text_popup_tlf"
+            android:autoLink="email"
+            />
+
+    <TextView
+            android:id="@+id/text_popup_medlemsiden"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="16sp"
+            android:layout_below="@id/text_popup_email"
+            />
+
+
+    <TextView
+            android:id="@+id/text_popup_info"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="13sp"
+            android:layout_below="@id/text_popup_medlemsiden"
+            android:lines="2"
+            />
+
+    <Button android:id="@+id/popup_menu_lagre"
+            android:text="@string/medlem_6"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_popup_info"
+            android:layout_centerHorizontal="true"
+            />
+
+    <Button android:id="@+id/popup_menu_button1"
+            android:text="@string/kalender_04"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/popup_menu_lagre"
+            android:layout_centerHorizontal="true"
+            />
+
+</RelativeLayout>
+
+
+<!-- From: file:/Users/johanpbj/Dropbox/IAESTEappv2015/app/src/main/res/layout/popup_medlem.xml -->

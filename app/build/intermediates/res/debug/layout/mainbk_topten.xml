@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent"
+             android:stretchColumns="1"
+             android:background="@drawable/back_home_02_m"
+        >
+
+
+    <TextView
+            android:id="@+id/text_mainbk_title"
+            android:text="10 på topp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+
+            />
+
+    <TableRow>
+        <TextView
+                android:text="1."
+                android:padding="0dip"
+                android:textSize="14sp"/>
+        <TextView
+                android:id="@+id/text_mainbk_first_place"
+                android:text=""
+                android:padding="0dip"
+                android:textSize="14sp"/>
+
+        <TextView
+                android:id="@+id/text_mainbk_first_place_lk"
+                android:text=""
+                android:padding="0dip"
+                android:textSize="14sp"/>
+
+    </TableRow>
+
+    <TableRow>
+        <TextView
+                android:text="2."
+                android:padding="0dip"
+                android:textSize="14sp"/>
+        <TextView
+                android:id="@+id/text_mainbk_second_place"
+
+                android:text=""
+                android:padding="0dip"
+                android:textSize="14sp"/>
+
+        <TextView
+                android:id="@+id/text_mainbk_second_place_lk"
+                android:text=""
+                android:padding="0dip"
+                android:textSize="14sp"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView
+                android:text="3."
+                android:padding="0dip"
+                android:textSize="14sp"/>
+        <TextView
+                android:id="@+id/text_mainbk_third_place"
+
+                android:text=""
+                android:padding="0dip"
+                android:textSize="14sp"/>
+        <TextView
+                android:id="@+id/text_mainbk_third_place_lk"
+                android:text=""
+                android:padding="0dip"
+                android:textSize="14sp"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView
+                android:text="4."
+                android:padding="0dip"
+                android:textSize="14sp"/>
+
+        />
+        <TextView
+                android:id="@+id/text_mainbk_fourth_place"
+
+                android:text=""
+                android:padding="0dip"
+                android:textSize="14sp"/>
+
+        />
+        <TextView
+                android:id="@+id/text_mainbk_fourth_place_lk"
+                android:text=""
+                android:padding="0dip"
+                android:textSize="14sp"/>
+
+        />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+                android:text="5."
+                android:padding="0dip"
+                android:textSize="14sp"/>
+        <TextView
+                android:id="@+id/text_mainbk_fith_place"
+
+                android:text=""
+                android:padding="0dip"
+                android:textSize="14sp"/>
+
+        />
+        <TextView
+                android:id="@+id/text_mainbk_fith_place_lk"
+
+                android:text=""
+                android:padding="0dip"
+                android:textSize="14sp"/>
+
+        />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+                android:text="6."
+                android:padding="0dip"
+                android:textSize="14sp"/>
+
+        />
+        <TextView
+                android:id="@+id/text_mainbk_sixth_place"
+
+                android:text=""
+                android:padding="0dip"
+                android:textSize="14sp"/>
+
+        />
+        <TextView
+                android:id="@+id/text_mainbk_sixth_place_lk"
+
+                android:text=""
+                android:padding="0dip"
+                android:textSize="14sp"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView
+                android:text="7."
+                android:padding="0dip"
+                android:textSize="14sp"/>
+
+        />
+        <TextView
+                android:id="@+id/text_mainbk_seventh_place"
+
+                android:text=""
+                android:padding="0dip"
+                android:textSize="14sp"/>
+
+        />
+        <TextView
+                android:id="@+id/text_mainbk_seventh_place_lk"
+
+                android:text=""
+                android:padding="0dip"
+                android:textSize="14sp"/>
+
+        />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+                android:text="8."
+                android:padding="0dip"
+                android:textSize="14sp"/>
+
+        />
+        <TextView
+                android:id="@+id/text_mainbk_eight_place"
+
+                android:text=""
+                android:padding="0dip"
+                android:textSize="14sp"/>
+
+        />
+        <TextView
+                android:id="@+id/text_mainbk_eight_place_lk"
+
+                android:text=""
+                android:padding="0dip"
+                android:textSize="14sp"/>
+
+        />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+                android:text="9."
+                android:padding="0dip"
+                android:textSize="14sp"/>
+
+        />
+        <TextView
+                android:id="@+id/text_mainbk_nine_place"
+
+                android:text=""
+                android:padding="0dip"
+                android:textSize="14sp"/>
+        <TextView
+                android:id="@+id/text_mainbk_nine_place_lk"
+
+                android:text=""
+                android:padding="0dip"
+                />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+                android:text="10."
+                android:padding="0dip"
+                android:textSize="14sp"/>
+
+        />
+        <TextView
+                android:id="@+id/text_mainbk_ten_place"
+
+                android:text=""
+                android:padding="0dip"
+                android:textSize="14sp"/>
+
+        />
+        <TextView
+                android:id="@+id/text_mainbk_ten_place_lk"
+
+                android:text=""
+                android:padding="0dip"
+                android:textSize="14sp"/>
+
+        />
+    </TableRow>
+
+    <TextView
+            android:text="@string/bk_topten_01"
+            android:textSize="20sp"
+            android:textStyle="bold"
+
+            />
+
+    <TableRow>
+
+        <TextView
+                android:id="@+id/text_mainbk_gjennom"
+                android:text="60"
+                android:textSize="14sp"/>
+        />
+
+        <TextView
+                android:text="@string/bk_topten_02"
+                android:padding="0dip"
+                android:textSize="13sp"/>
+        />
+    </TableRow>
+
+
+</TableLayout><!-- From: file:/Users/johanpbj/Dropbox/IAESTEappv2015/app/src/main/res/layout/mainbk_topten.xml -->

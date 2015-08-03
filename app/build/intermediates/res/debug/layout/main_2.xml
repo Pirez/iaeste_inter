@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:cacheColorHint="#FFBB00"
+        >
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="27sp"
+            android:layout_weight="1"
+            android:id="@+id/label_main"
+            android:padding="20dp"
+            android:textStyle="normal"
+            >
+    </TextView>
+
+    <ImageView
+            android:id="@+id/icon_main"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:src="@drawable/baby_mark_oransje"
+            android:visibility="gone"
+            ></ImageView>
+
+</LinearLayout>
+
+
+<!-- From: file:/Users/johanpbj/Dropbox/IAESTEappv2015/app/src/main/res/layout/main_2.xml -->

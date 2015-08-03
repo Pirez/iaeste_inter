@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <color name="custom_theme_color">#ffffff</color>
+    <color name="titlebar_color">#00ced1</color>
+    <style name="LightTheme" parent="android:Theme.Light">
+        <item name="android:windowBackground">@color/custom_theme_color</item>
+        <item name="android:colorBackground">@color/custom_theme_color</item>
+        <item name="android:cacheColorHint">@color/custom_theme_color</item>
+        <item name="android:color">@color/custom_theme_color</item>
+
+
+    </style>
+    <style name="BlackTheme" parent="android:Theme.Black"></style>
+</resources>
+
+

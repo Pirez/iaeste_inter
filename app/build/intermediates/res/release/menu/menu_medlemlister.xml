@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/MEW"
+
+          android:title="Velg LK"
+          android:icon="@drawable/info">
+        <menu>
+            <item android:id="@+id/Bergen" android:title="Bergen"></item>
+            <item android:id="@+id/Grimstad" android:title="Grimstad"></item>
+            <item android:id="@+id/Oslo" android:title="Oslo"></item>
+            <item android:id="@+id/Stavanger" android:title="Trondheim"></item>
+            <item android:id="@+id/Tromso" android:title="Tromso"></item>
+            <item android:id="@+id/Trondheim" android:title="Stavanger"></item>
+            <item android:id="@+id/As" android:title="As"></item>
+        </menu>
+    </item>
+
+
+</menu>
+<!-- From: file:/Users/johanpbj/Dropbox/IAESTEappv2015/app/src/main/res/menu/menu_medlemlister.xml -->

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:background="@drawable/back_home_02_m">
+    >
+
+
+    <TextView
+            android:textSize="21sp"
+            android:padding="2dp"
+            android:id="@+id/text_credits_tittel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/credits_02"
+            android:textStyle="bold"
+            />
+    <TextView
+            android:id="@+id/text_credits_historie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/credits_03"
+            />
+
+
+    <TextView
+            android:id="@+id/text_credits_historie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/credits_04"
+            />
+
+    <TextView
+            android:textSize="20sp"
+            android:id="@+id/text_credits_programmere"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/credits_05"
+            />
+
+    <TextView
+            android:textSize="16sp"
+            android:id="@+id/text_credits_navn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/credits_06"
+
+
+            />
+
+    <TextView
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/credits_07"
+            android:autoLink="email"
+
+            />
+
+    <TextView
+            android:textSize="13sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/credits_08"
+
+            />
+
+    <TextView
+            android:id="@+id/text_link_credits_bug"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            />
+
+
+    <Button android:id="@+id/button_credits_back"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/credits_09"/>
+
+
+</LinearLayout><!-- From: file:/Users/johanpbj/Dropbox/IAESTEappv2015/app/src/main/res/layout/main_credits.xml -->

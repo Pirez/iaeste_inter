@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/back_home_02_m"
+        >
+    <TextView android:id="@+id/text_login_overskrift"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:text="@string/login_20"
+              android:textSize="21sp"
+              android:textStyle="bold"
+
+
+            />
+
+    <TextView android:id="@+id/text_login_info"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textSize="16sp"
+              android:layout_centerHorizontal="true"
+              android:text=""
+              android:layout_below="@id/text_login_overskrift"
+              android:padding="3sp"
+            />
+
+    <TextView android:id="@+id/text_login_brukernavn"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/login_21"
+              android:layout_below="@id/text_login_info"
+            />
+    <EditText android:id="@+id/edittext_brukernavn"
+              android:layout_width="240sp"
+              android:layout_height="wrap_content"
+              android:layout_below="@id/text_login_info"
+              android:layout_toRightOf="@id/text_login_brukernavn"
+              android:hint="@string/login_21"
+              android:inputType="textEmailAddress"
+              android:text=""/>
+
+    <TextView android:id="@+id/text_login_passord"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/login_23"
+              android:layout_below="@id/edittext_brukernavn"
+
+
+            />
+    <EditText android:id="@+id/edittext_login_password"
+              android:layout_width="240sp"
+              android:layout_height="wrap_content"
+              android:layout_below="@id/edittext_brukernavn"
+              android:layout_toRightOf="@id/text_login_passord"
+              android:password="true"
+              android:hint="@string/login_08"
+              android:text=""
+              android:layout_alignLeft="@+id/edittext_brukernavn"
+            />
+
+    <CheckBox android:id="@+id/checkbox_login_husk"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@id/edittext_login_password"
+              android:text="@string/login_06"
+              android:checked="true"
+            />
+
+
+    <Button android:id="@+id/button_login_Login"
+            android:layout_width="150sp"
+            android:layout_height="40sp"
+            android:layout_below="@id/checkbox_login_husk"
+            android:text="@string/login_09"
+            android:layout_alignParentLeft="true"
+
+            />
+
+    <Button android:id="@+id/button_login_reset"
+            android:layout_width="150sp"
+            android:layout_height="40sp"
+            android:layout_below="@id/checkbox_login_husk"
+            android:text="@string/login_24"
+            android:layout_alignParentRight="true"
+
+            />
+
+
+</RelativeLayout>
+<!-- From: file:/Users/johanpbj/Dropbox/IAESTEappv2015/app/src/main/res/layout/login.xml -->
