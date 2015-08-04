@@ -19,7 +19,6 @@ import android.view.*;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.widget.*;
 
-import com.squareup.picasso.Picasso;
 
 import java.io.*;
 import java.net.MalformedURLException;

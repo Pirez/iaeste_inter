@@ -5,10 +5,12 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.*;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.*;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -32,7 +34,7 @@ public class testLogin extends Activity implements Runnable {
     Button login, glemt_passord, back_passord, glemsk_passord;
     String name = "", pass = "", mail = "";
     EditText username, password;
-    TextView tv;
+    TextView tv, link, appText;
     byte[] data;
     HttpPost httppost;
     StringBuffer buffer;
@@ -54,6 +56,8 @@ public class testLogin extends Activity implements Runnable {
 
 
         app_preferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        appText = (TextView) findViewById(R.id.text);
         username = (EditText) findViewById(com.iaesteintern.R.id.username);
         password = (EditText) findViewById(R.id.password);
         glemt_passord = (Button) findViewById(R.id.glemt_passord);
@@ -62,11 +66,36 @@ public class testLogin extends Activity implements Runnable {
 
         login = (Button) findViewById(R.id.login);
         check = (CheckBox) findViewById(R.id.check);
+        link = (TextView) findViewById(R.id.link_iaeste);
 
         String Str_user = app_preferences.getString("username", "0");
         String Str_pass = app_preferences.getString("password", "0");
         String Str_check = app_preferences.getString("checked", "no");
-        Boolean Bol_auth = app_preferences.getBoolean("auth", false);    //
+        Boolean Bol_auth = app_preferences.getBoolean("auth", false);
+
+
+        //Definerer selve fonten og setter font på der de skal være
+        Typeface iaesteFont = Typeface.createFromAsset(getAssets(), "fonts/iaesteFont.ttf");
+        Typeface iaesteFontBold = Typeface.createFromAsset(getAssets(), "fonts/iaesteFontBold.ttf");
+
+        appText.setTypeface(iaesteFontBold);
+        username.setTypeface(iaesteFont);
+        password.setTypeface(iaesteFont);
+        glemt_passord.setTypeface(iaesteFont);
+        back_passord.setTypeface(iaesteFont);
+        glemsk_passord.setTypeface(iaesteFont);
+        login.setTypeface(iaesteFont);
+        check.setTypeface(iaesteFont);
+        link.setTypeface(iaesteFont);
+
+        //if for å skifte farge på ActionBar for lollipop, vanlig måte i styles.xml funker ikke alltid
+        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            getWindow().setStatusBarColor(getResources().getColor(R.color.secondary));
+        }*/
+
+
+
 
 
         if (Bol_auth) {

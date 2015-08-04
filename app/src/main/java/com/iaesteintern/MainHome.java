@@ -61,7 +61,7 @@ public class MainHome extends ListActivity implements Runnable {
         mv.setTextFilterEnabled(true);
 
         getListView().setCacheColorHint(0);
-        getListView().setBackgroundResource(R.drawable.back_home_02);
+        mv.setBackgroundResource(R.color.background);
 
         final SharedPreferences loginSettings = getSharedPreferences("LoginSettings", MODE_PRIVATE);
         final SharedPreferences innstillinger = getSharedPreferences("Innstillinger", MODE_PRIVATE);

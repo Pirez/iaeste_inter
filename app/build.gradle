@@ -13,7 +13,7 @@ android {
     defaultConfig {
         applicationId "com.iaesteintern"
         minSdkVersion 16
-        targetSdkVersion 21
+        targetSdkVersion 16
     }
     buildTypes {
         release {
@@ -26,6 +26,5 @@ android {
 
 dependencies {
 
-    compile 'com.squareup.picasso:picasso:2.1.1'
 
 }

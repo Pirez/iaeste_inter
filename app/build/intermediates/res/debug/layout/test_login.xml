@@ -3,8 +3,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:fadingEdge="horizontal"
-        android:background="@drawable/back_blue_test4">
-    >
+    android:background="@color/background">
     <TextView
             android:id="@+id/text"
             android:text="@string/login_title"
