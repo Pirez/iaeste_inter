@@ -19,6 +19,8 @@ import android.view.*;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.widget.*;
 
+import com.squareup.picasso.Picasso;
+
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -445,6 +447,8 @@ public class MainMedlemslister extends ListActivity implements Runnable {
             System.arraycopy(medlem_data[lk_active][0], 0, navneliste_oslo, 0, i2);
             setListAdapter(new ArrayAdapter<String>(MainMedlemslister.this, R.layout.main_medlemslister, R.id.label, navneliste_oslo));
             setTitle(getString(R.string.lk_1) + " Oslo " + Integer.toString(navneliste_oslo.length) + " " + getString(R.string.medlem_1));
+
+
         } else if (lk_active == 3) {
             //Dette er egentlig Stavanger, finner ikkje feil
             String[] navneliste_trondheim = new String[i3];
@@ -608,6 +612,25 @@ public class MainMedlemslister extends ListActivity implements Runnable {
 
     }
 
+
+    public void listThumb() {
+
+        /*//System.arraycopy(medlem_data[lk_active][4], 0, bilder_oslo, 0, i2);
+        Context mContext;
+        String url= "";
+        ImageView thumbnailImageView = (ImageView) findViewById(R.id.user);
+
+        URL_LINK = getString(R.string.url_pictures_member) + url;
+
+        if (bilder_oslo.has("cover_i")) {
+            mContext = context;
+            String imageURL = URL_LINK + url;
+            Picasso.with(mContext).load(imageURL).placeholder(R.drawable.people).into(thumbnailImageView);
+        } else {
+
+        }*/
+
+    }
 
     public void popup_window(final String popup_navn, final String popup_tlf, final String popup_email, final String url, Context context, final String popup_lk, final String popup_verv) {
 
