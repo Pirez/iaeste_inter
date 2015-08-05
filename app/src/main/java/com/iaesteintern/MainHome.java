@@ -66,7 +66,7 @@ public class MainHome extends ListActivity implements Runnable {
 
 
         //lagde en CustomArrayAdapter for aa sette inn fonten,
-        CustomArrayAdapter my_adapter = new CustomArrayAdapter(this, main_menu);
+        CustomArrayAdapterMainHome my_adapter = new CustomArrayAdapterMainHome(this, main_menu);
         setListAdapter(my_adapter);
         //setListAdapter(new ArrayAdapter(this, R.layout.main_2, R.id.label_main, main_menu));
 

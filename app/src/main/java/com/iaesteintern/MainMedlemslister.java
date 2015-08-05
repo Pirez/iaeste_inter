@@ -80,7 +80,7 @@ public class MainMedlemslister extends ListActivity implements Runnable {
         //getActionBar().setDisplayHomeAsUpEnabled(true);
 
         getListView().setCacheColorHint(0);
-        getListView().setBackgroundResource(R.drawable.back_orange_color);
+        getListView().setBackgroundResource(R.color.background);
      //   final SharedPreferences innstillinger = getSharedPreferences("Innstillinger", MODE_PRIVATE);
      //   SharedPreferences.Editor inn = innstillinger.edit();
 
@@ -195,8 +195,8 @@ public class MainMedlemslister extends ListActivity implements Runnable {
         lister.setTextFilterEnabled(true);
         registerForContextMenu(lister);
 
-        getListView().setCacheColorHint(0);
-        getListView().setBackgroundResource(R.drawable.back_home_02_m);
+        /*getListView().setCacheColorHint(0);
+        getListView().setBackgroundResource(R.drawable.back_home_02_m);*/
 
 
         lister.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -398,7 +398,7 @@ public class MainMedlemslister extends ListActivity implements Runnable {
         //Setter en meny, slik at du kan velge LK
         lk_active = -1;  //Slik at det blir en MENY og ikkje en person
         String[] Start_meny = getResources().getStringArray(R.array.string_LK);
-        setListAdapter(new ArrayAdapter<String>(this, R.layout.main_medlemslister_2, R.id.label, Start_meny));
+        setListAdapter(new CustomArrayAdapterLkListe(this, Start_meny));
     }
 
     public String convertHexToString(String hex) {
@@ -432,19 +432,19 @@ public class MainMedlemslister extends ListActivity implements Runnable {
         if (lk_active == 0) {
             String[] navneliste_bergen = new String[i0];
             System.arraycopy(medlem_data[lk_active][0], 0, navneliste_bergen, 0, i0);
-            setListAdapter(new ArrayAdapter<String>(this, R.layout.main_medlemslister, R.id.label, navneliste_bergen));
+            setListAdapter(new CustomArrayAdapterMedlemsListe(this, navneliste_bergen));
             setTitle(getString(R.string.lk_1) + " Bergen " + Integer.toString(navneliste_bergen.length) + " " + getString(R.string.medlem_1));
 
         } else if (lk_active == 1) {
             String[] navneliste_grimstad = new String[i1];
             System.arraycopy(medlem_data[lk_active][0], 0, navneliste_grimstad, 0, i1);
-            setListAdapter(new ArrayAdapter<String>(this, R.layout.main_medlemslister, R.id.label, navneliste_grimstad));
+            setListAdapter(new CustomArrayAdapterMedlemsListe(this, navneliste_grimstad));
             setTitle(getString(R.string.lk_1) + " Grimstad " + Integer.toString(navneliste_grimstad.length) + " " + getString(R.string.medlem_1));
 
         } else if (lk_active == 2) {
             String[] navneliste_oslo = new String[i2];
             System.arraycopy(medlem_data[lk_active][0], 0, navneliste_oslo, 0, i2);
-            setListAdapter(new ArrayAdapter<String>(MainMedlemslister.this, R.layout.main_medlemslister, R.id.label, navneliste_oslo));
+            setListAdapter(new CustomArrayAdapterMedlemsListe(this, navneliste_oslo));
             setTitle(getString(R.string.lk_1) + " Oslo " + Integer.toString(navneliste_oslo.length) + " " + getString(R.string.medlem_1));
 
 
@@ -452,26 +452,26 @@ public class MainMedlemslister extends ListActivity implements Runnable {
             //Dette er egentlig Stavanger, finner ikkje feil
             String[] navneliste_trondheim = new String[i3];
             System.arraycopy(medlem_data[lk_active][0], 0, navneliste_trondheim, 0, i3);
-            setListAdapter(new ArrayAdapter<String>(this, R.layout.main_medlemslister, R.id.label, navneliste_trondheim));
+            setListAdapter(new CustomArrayAdapterMedlemsListe(this, navneliste_trondheim));
             setTitle(getString(R.string.lk_1) + " Stavanger " + Integer.toString(navneliste_trondheim.length) + " " + getString(R.string.medlem_1));
 
         } else if (lk_active == 4) {
             String[] navneliste_tromso = new String[i4];
             System.arraycopy(medlem_data[lk_active][0], 0, navneliste_tromso, 0, i4);
-            setListAdapter(new ArrayAdapter<String>(this, R.layout.main_medlemslister, R.id.label, navneliste_tromso));
+            setListAdapter(new CustomArrayAdapterMedlemsListe(this, navneliste_tromso));
             setTitle(getString(R.string.lk_1) + " Tromsø " + Integer.toString(navneliste_tromso.length) + " " + getString(R.string.medlem_1));
 
         } else if (lk_active == 5) {
             //Dette er egentlig Trondheim, finner ikkje feil
             String[] navneliste_stavanger = new String[i5];
             System.arraycopy(medlem_data[lk_active][0], 0, navneliste_stavanger, 0, i5);
-            setListAdapter(new ArrayAdapter<String>(this, R.layout.main_medlemslister, R.id.label, navneliste_stavanger));
+            setListAdapter(new CustomArrayAdapterMedlemsListe(this, navneliste_stavanger));
             setTitle(getString(R.string.lk_1) + " Trondheim " + Integer.toString(navneliste_stavanger.length) + " " + getString(R.string.medlem_1));
 
         } else if (lk_active == 6) {
             String[] navneliste_as = new String[i6];
             System.arraycopy(medlem_data[lk_active][0], 0, navneliste_as, 0, i6);
-            setListAdapter(new ArrayAdapter<String>(this, R.layout.main_medlemslister, R.id.label, navneliste_as));
+            setListAdapter(new CustomArrayAdapterMedlemsListe(this, navneliste_as));
             setTitle(getString(R.string.lk_1) + " Ås " + Integer.toString(navneliste_as.length) + " " + getString(R.string.medlem_1));
         }
     }

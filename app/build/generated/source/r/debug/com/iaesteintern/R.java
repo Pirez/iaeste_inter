@@ -275,14 +275,17 @@ public final class R {
         public static final int version=0x7f050052;
     }
     public static final class style {
-        public static final int BlackTheme=0x7f060003;
+        public static final int BlackTheme=0x7f060002;
         /**  <item name="android:windowBackground">@color/custom_theme_color</item>
         <item name="android:colorBackground">@color/custom_theme_color</item>
         <item name="android:cacheColorHint">@color/custom_theme_color</item>
         <item name="android:color">@color/custom_theme_color</item> 
          */
         public static final int LightTheme=0x7f060000;
+        /** <item name="android:titleTextStyle">@style/NoTitleText</item>
+               <item name="android:subtitleTextStyle">@style/NoTitleText</item>
+         */
         public static final int MyActionBar=0x7f060001;
-        public static final int NoTitleText=0x7f060002;
+        public static final int RobotoTextViewStyle=0x7f060003;
     }
 }

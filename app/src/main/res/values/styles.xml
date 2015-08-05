@@ -8,8 +8,12 @@
         <item name="android:colorBackground">@color/custom_theme_color</item>
         <item name="android:cacheColorHint">@color/custom_theme_color</item>
         <item name="android:color">@color/custom_theme_color</item> -->
-
     </style>
+
+    <style name="RobotoTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">s</item>
+    </style>
+
 
     <style name="BlackTheme" parent="android:Theme.Black">
     </style>

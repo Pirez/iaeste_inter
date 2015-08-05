@@ -14,7 +14,7 @@ import java.util.Arrays;
 /**
  * Created by Edvard on 05.08.2015.
  */
-public class CustomArrayAdapter extends ArrayAdapter<String> {
+public class CustomArrayAdapterMainHome extends ArrayAdapter<String> {
     private final Context context;
     private final String[] values;
     Activity activity;
@@ -22,7 +22,7 @@ public class CustomArrayAdapter extends ArrayAdapter<String> {
 
 
 
-    public CustomArrayAdapter(Context context, String[] values) {
+    public CustomArrayAdapterMainHome(Context context, String[] values) {
         super(context, R.layout.main_2, values);
         this.context = context;
         this.values = values;
