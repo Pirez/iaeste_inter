@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -14,9 +16,11 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -50,18 +54,34 @@ public class MainHome extends ListActivity implements Runnable {
     HttpClient httpclient;
     InputStream inputStream;
     List<NameValuePair> nameValuePairs;
+    TextView textview;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         //getActionBar().setHomeButtonEnabled(false);
+
         String[] main_menu = getResources().getStringArray(R.array.string_main_intern);
-        setListAdapter(new ArrayAdapter<String>(this, R.layout.main_2, R.id.label_main, main_menu));
+
+
+        //lagde en CustomArrayAdapter for aa sette inn fonten,
+        CustomArrayAdapter my_adapter = new CustomArrayAdapter(this, main_menu);
+        setListAdapter(my_adapter);
+        //setListAdapter(new ArrayAdapter(this, R.layout.main_2, R.id.label_main, main_menu));
+
+
         ListView mv = getListView();
         mv.setTextFilterEnabled(true);
 
         getListView().setCacheColorHint(0);
         mv.setBackgroundResource(R.color.background);
+
+        //fonten
+        Typeface iaesteFont = Typeface.createFromAsset(getAssets(), "fonts/iaesteFont.ttf");
+        Typeface iaesteFontBold = Typeface.createFromAsset(getAssets(), "fonts/iaesteFontBold.ttf");
+
+
 
         final SharedPreferences loginSettings = getSharedPreferences("LoginSettings", MODE_PRIVATE);
         final SharedPreferences innstillinger = getSharedPreferences("Innstillinger", MODE_PRIVATE);
@@ -72,6 +92,12 @@ public class MainHome extends ListActivity implements Runnable {
 
 
 
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            getWindow().setStatusBarColor(getResources().getColor(R.color.secondary));
+        }
+
         //Sjekker hvis knappene blir trykket, og gjør forskjellige ting:
         mv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
@@ -79,8 +105,11 @@ public class MainHome extends ListActivity implements Runnable {
                 //BK_knappen
                 if (position == 0) {
                     if (loginSettings.getBoolean("login", true)) {
-                        Intent in = new Intent(MainHome.this, MainBKTopTen.class);
-                        startActivity(in);
+
+                        //BK er fucka uansett
+
+                        /*Intent in = new Intent(MainHome.this, MainBKTopTen.class);
+                        startActivity(in);*/
                     } else {
 
                         Toast.makeText(getApplicationContext(), R.string.login_01,

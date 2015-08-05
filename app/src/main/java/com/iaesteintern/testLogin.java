@@ -88,11 +88,11 @@ public class testLogin extends Activity implements Runnable {
         check.setTypeface(iaesteFont);
         link.setTypeface(iaesteFont);
 
-        //if for å skifte farge på ActionBar for lollipop, vanlig måte i styles.xml funker ikke alltid
-        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             getWindow().setStatusBarColor(getResources().getColor(R.color.secondary));
-        }*/
+        }
 
 
 
