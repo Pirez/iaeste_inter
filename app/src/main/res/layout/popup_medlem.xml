@@ -12,14 +12,15 @@
             android:layout_height="wrap_content"
             android:textColor="#ffffffff"
             android:text=""
-            android:textSize="4sp"
-            android:lines="2"
+            android:textSize="40sp"
+        android:paddingBottom="10dp"
+            android:gravity="center"
             />
 
     <ImageView
             android:id="@+id/bilde_popup_kalender"
-            android:layout_width="200sp"
-            android:layout_height="200sp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:layout_below="@id/text_popup_overskrift"
             android:paddingLeft="4sp"
             android:layout_centerHorizontal="true"
@@ -43,8 +44,9 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text=""
-            android:textSize="18sp"
+            android:textSize="25sp"
             android:layout_below="@id/progress_popup"
+        android:gravity="center"
             />
     <TextView
             android:id="@+id/text_popup_tlf"
@@ -52,18 +54,22 @@
             android:layout_height="wrap_content"
             android:text=""
             android:layout_below="@id/text_popup_navn"
-            android:textSize="18sp"
+            android:textSize="25sp"
             android:autoLink="phone"
-            />
+        android:gravity="center"
+
+        />
     <TextView
             android:id="@+id/text_popup_email"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text=""
-            android:textSize="18sp"
+            android:textSize="25sp"
             android:layout_below="@id/text_popup_tlf"
             android:autoLink="email"
-            />
+            android:gravity="center"
+
+        />
 
     <TextView
             android:id="@+id/text_popup_medlemsiden"
@@ -80,10 +86,12 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text=""
-            android:textSize="13sp"
+            android:textSize="18sp"
             android:layout_below="@id/text_popup_medlemsiden"
             android:lines="2"
-            />
+            android:gravity="center"
+
+        />
 
     <Button android:id="@+id/popup_menu_lagre"
             android:text="@string/medlem_6"
@@ -99,6 +107,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/popup_menu_lagre"
             android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
             />
 
 </RelativeLayout>

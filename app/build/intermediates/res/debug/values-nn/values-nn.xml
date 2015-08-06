@@ -137,8 +137,8 @@
     <string name="medlem_4">Send SMS</string>
     <string name="medlem_5">Send mail</string>
     <string name="medlem_6">Lagra kontakt</string>
-    <string name="pic_02">Personen har bildet, for å se det aktiver "Auto Bilde" i innstillinger</string>
-    <string name="pic_03">Personen har ikkje bildet</string>
+    <string name="pic_02">Personen har bilde, for å se det aktiver "Auto Bilde" i innstillinger</string>
+    <string name="pic_03">Personen har ikkje bilde</string>
     <string name="soon">Fungerer ikkje, kommer i nær fremtid</string>
     <string name="title_02">IAESTE intern</string>
     <string name="title_05">BK</string>

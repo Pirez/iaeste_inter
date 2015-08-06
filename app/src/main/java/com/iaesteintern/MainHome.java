@@ -1,5 +1,6 @@
 package com.iaesteintern;
 
+import android.app.ActionBar;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -12,6 +13,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.preference.PreferenceManager;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -60,7 +63,7 @@ public class MainHome extends ListActivity implements Runnable {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //getActionBar().setHomeButtonEnabled(false);
+        //getActionBar().setHomeButtonEnabled(true);
 
         String[] main_menu = getResources().getStringArray(R.array.string_main_intern);
 
@@ -98,6 +101,19 @@ public class MainHome extends ListActivity implements Runnable {
             getWindow().setStatusBarColor(getResources().getColor(R.color.secondary));
         }
 
+
+
+        SpannableString s = new SpannableString("");
+        s.setSpan(new TypefaceSpan(this, "iaesteFontBold.ttf"), 0, s.length(),
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        // Update the action bar title with the TypefaceSpan instance
+        ActionBar actionBar = getActionBar();
+        actionBar.setTitle(s);
+
+
+
+
         //Sjekker hvis knappene blir trykket, og gjør forskjellige ting:
         mv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
@@ -107,7 +123,7 @@ public class MainHome extends ListActivity implements Runnable {
                     if (loginSettings.getBoolean("login", true)) {
 
                         //BK er fucka uansett
-
+                        Toast.makeText(MainHome.this, "BK er for øyeblikket utilgjengelig", Toast.LENGTH_SHORT).show();
                         /*Intent in = new Intent(MainHome.this, MainBKTopTen.class);
                         startActivity(in);*/
                     } else {

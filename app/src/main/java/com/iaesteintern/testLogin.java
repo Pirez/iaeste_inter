@@ -1,5 +1,6 @@
 package com.iaesteintern;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -8,6 +9,8 @@ import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.*;
 import android.preference.PreferenceManager;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -94,7 +97,13 @@ public class testLogin extends Activity implements Runnable {
             getWindow().setStatusBarColor(getResources().getColor(R.color.secondary));
         }
 
+        SpannableString s = new SpannableString("IAESTE Norge");
+        s.setSpan(new TypefaceSpan(this, "iaesteFontBold.ttf"), 0, s.length(),
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
+        // Update the action bar title with the TypefaceSpan instance
+        ActionBar actionBar = getActionBar();
+        actionBar.setTitle(s);
 
 
 

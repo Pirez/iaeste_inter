@@ -3,18 +3,32 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:fadingEdge="horizontal"
-    android:background="@color/background">
+        android:background="@color/background">
+
+    <ImageView
+        android:id="@+id/iaesteLOGO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/iaesteorange"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+
+        />
     <TextView
             android:id="@+id/text"
             android:text="@string/login_title"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="200dp"
             android:layout_centerHorizontal="true"
-            android:layout_alignParentTop="true"
+            android:layout_alignParentTop="false"
             android:layout_marginTop="10dip"
             android:textStyle="bold"
-            android:textSize="26sp">
+            android:textSize="26sp"
+            android:visibility="gone"
+        android:layout_below="@id/iaesteLOGO">
+
     </TextView>
+
     <EditText
             android:id="@+id/username"
             android:layout_width="220dp"
@@ -103,6 +117,8 @@
             android:layout_below="@+id/back_passord"
             android:textSize="19sp"
             android:autoLink="web">
+
     </TextView>
+
 
 </RelativeLayout><!-- From: file:/C:/Users/Edvard/AndroidStudioProjects/iaeste_inter/app/src/main/res/layout/test_login.xml -->
