@@ -88,7 +88,7 @@
             android:text=""
             android:textSize="18sp"
             android:layout_below="@id/text_popup_medlemsiden"
-            android:lines="2"
+
             android:gravity="center"
 
         />
@@ -104,7 +104,7 @@
     <Button android:id="@+id/popup_menu_button1"
             android:text="@string/kalender_04"
             android:layout_width="160dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_below="@id/popup_menu_lagre"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="10dp"

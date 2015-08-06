@@ -1,11 +1,15 @@
 package com.iaesteintern;
 //package com.android.HelloWorld;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
@@ -19,11 +23,14 @@ public class MainKalender extends Activity {
     private String[][][] event_data = new String[2][12][5];
     int spinner_pos = 0;
     int list_pos = 0;
+    int i0;
     int kalender_active = 0; //sjekker hvis den er i list (0) eller popup (1)
     int lengden_kalender = 3000;
     private String[][] kalender_data = new String[lengden_kalender][7];   //PASS PÅ LENGDEN AV DATA DEN FÅR INN, aka 7 LK, 5 DATA INFORMASJON, 100 MEDLEMMER
     private Vector<String> kalender_balle = new Vector<String>();
     ArrayList<Integer> pos_liste;
+    Typeface iaesteFont;
+    Typeface iaesteFontBold;
 
     public static String getWord(String str, char seperator, int no) {
         int eind = 0;
@@ -71,130 +78,151 @@ public class MainKalender extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_kalender);
-        //getActionBar().setDisplayHomeAsUpEnabled(true);
+                super.onCreate(savedInstanceState);
+                setContentView(R.layout.main_kalender);
+                getActionBar().setDisplayHomeAsUpEnabled(true);
+                iaesteFont = Typeface.createFromAsset(getAssets(), "fonts/iaesteFont.ttf");
+                iaesteFontBold = Typeface.createFromAsset(getAssets(), "fonts/iaesteFontBold.ttf");
+
 
         try {
-            String[] file_data = getResources().getStringArray(R.array.filename_list);   //Medlem data filen
-            FileInputStream fis = openFileInput(file_data[2]);
-            BufferedReader r = new BufferedReader(new InputStreamReader(fis));
-            String line;
-            String data;
+                    String[] file_data = getResources().getStringArray(R.array.filename_list);   //Medlem data filen
+                    FileInputStream fis = openFileInput(file_data[2]);
+                    BufferedReader r = new BufferedReader(new InputStreamReader(fis));
+                    String line;
+                    String data;
 
-            int ii = 0;
+                    int ii = 0;
 
-            //Leser av teskstfilen, og putter data inn i array, og sorteres etter LK, og deretter informasjon om personern, eks.navn,tlf...
-            while ((line = r.readLine()) != null) {
-                data = (getWord(line, ';', 1));                            //Leser fra første kolonne datasett
-                // j = data, i = personer
-                Integer words = 7; //Hvor mangen kolonner den skal lese inn
+                    //Leser av teskstfilen, og putter data inn i array, og sorteres etter LK, og deretter informasjon om personern, eks.navn,tlf...
+                    while ((line = r.readLine()) != null) {
+                        data = (getWord(line, ';', 1));                            //Leser fra første kolonne datasett
+                        // j = data, i = personer
+                        Integer words = 7; //Hvor mangen kolonner den skal lese inn
 
-                for (int i = 0; i < words; i++) {
-                    kalender_data[ii][i] = convertHexToString(getWord(data, '*', i));
-                }
-                ii++;
+                        for (int i = 0; i < words; i++) {
+                            kalender_data[ii][i] = convertHexToString(getWord(data, '*', i));
+                        }
+                        ii++;
 
-            }
-            fis.close();
-
-
-        } catch (FileNotFoundException e) {
-
-            Toast.makeText(getApplicationContext(), R.string.update_text_02, Toast.LENGTH_SHORT).show();
-
-        } catch (IOException e) {
-            //Teksten er koruppt
-            Toast.makeText(getApplicationContext(), "IO feil! Kode: 01",
-                    Toast.LENGTH_SHORT).show();
-        }
+                    }
+                    fis.close();
 
 
-        final SharedPreferences spinner_memory = getSharedPreferences("Innstillinger", MODE_PRIVATE);
-        int spinner_pos_mem = spinner_memory.getInt("pos", 0);
-        Spinner spinner = (Spinner) findViewById(R.id.widget44);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.valg_LK, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+                } catch (FileNotFoundException e) {
 
-        //Setteer spinner på den posisjonen brukeren var inni, slik at den ikje restetter
-        spinner.setSelection(spinner_pos_mem);
+                    Toast.makeText(getApplicationContext(), R.string.update_text_02, Toast.LENGTH_SHORT).show();
 
-
-        ListView kalender_list = (ListView) findViewById(R.id.widget45);
-
-        ArrayAdapter<CharSequence> liste =
-                new ArrayAdapter<CharSequence>(this, android.R.layout.simple_list_item_1);
-        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
-        pos_liste = new ArrayList<Integer>();
-
-        for (int i = 0; i < lengden_kalender; i++) {
-            String tmp_overskrift = kalender_data[i][6];
-            if (tmp_overskrift == null) {
-            } else {
-                liste.add(tmp_overskrift);
-                pos_liste.add(i);
-            }
-        }
-        kalender_list.setAdapter(liste);
-
-        /*
-       ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(
-               this, R.array.string_kalender_events_nasjonal, android.R.layout.simple_list_item_1);
-       kalender_list.setAdapter(adapter2);
-        */
-
-
-        class MyOnItemSelectedListener implements AdapterView.OnItemSelectedListener {
-
-            public void onItemSelected(AdapterView<?> parent,
-                                       View view, int pos, long id) {
-                spinner_pos = pos;
-                if (pos == 0) {
-                    /*
-                    ListView kalender_list = (ListView) findViewById(R.id.widget45);
-                    ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(
-                            MainKalender.this, R.array.string_kalender_events_nasjonal, android.R.layout.simple_list_item_1);
-                    kalender_list.setAdapter(adapter2); */
+                } catch (IOException e) {
+                    //Teksten er koruppt
+                    Toast.makeText(getApplicationContext(), "IO feil! Kode: 01",
+                            Toast.LENGTH_SHORT).show();
                 }
 
-                if (pos == 1) {
-                    ListView kalender_list = (ListView) findViewById(R.id.widget45);
-                    ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(
-                            MainKalender.this, R.array.string_kalender_events_weekends, android.R.layout.simple_list_item_1);
-                    kalender_list.setAdapter(adapter2);
+        SpannableString s = new SpannableString("Kalender");
+        s.setSpan(new TypefaceSpan(this, "iaesteFontBold.ttf"), 0, s.length(),
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        // Update the action bar title with the TypefaceSpan instance
+        ActionBar actionBar = getActionBar();
+        actionBar.setTitle(s);
+
+
+
+
+                final SharedPreferences spinner_memory = getSharedPreferences("Innstillinger", MODE_PRIVATE);
+                int spinner_pos_mem = spinner_memory.getInt("pos", 0);
+                Spinner spinner = (Spinner) findViewById(R.id.widget44);
+                ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.valg_LK, android.R.layout.simple_spinner_item);
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spinner.setAdapter(adapter);
+
+                //Setteer spinner på den posisjonen brukeren var inni, slik at den ikje restetter
+                spinner.setSelection(spinner_pos_mem);
+
+                //listview
+                ListView kalender_list = (ListView) findViewById(R.id.widget45);
+
+
+        /*String[] kalender_list = new String[i0];
+        System.arraycopy(kalender_data[0][0], 0, kalender_list, 0, i0);
+        setListAdapter(new CustomArrayAdapterKalender(this, kalender_list));
+        setActionBarTitle(getString(R.string.lk_1) + " Bergen " + Integer.toString(navneliste_bergen.length) + " " + getString(R.string.medlem_1));*/
+
+
+
+                ArrayAdapter<CharSequence> liste = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_list_item_1);
+                adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
+                pos_liste = new ArrayList<Integer>();
+
+                for (int i = 0; i < lengden_kalender; i++) {
+                    String tmp_overskrift = kalender_data[i][6];
+                    if (tmp_overskrift == null) {
+                    } else {
+                        liste.add(tmp_overskrift);
+                        pos_liste.add(i);
+                    }
                 }
 
+                kalender_list.setAdapter(liste);
 
-            }
-
-            public void onNothingSelected(AdapterView parent) {
-            }
-
-        }
-
-        spinner.setOnItemSelectedListener(new MyOnItemSelectedListener());
+                /*
+               ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(
+                       this, R.array.string_kalender_events_nasjonal, android.R.layout.simple_list_item_1);
+               kalender_list.setAdapter(adapter2);
+                */
 
 
-        kalender_list.setOnItemClickListener(new AdapterView.OnItemClickListener()
+                class MyOnItemSelectedListener implements AdapterView.OnItemSelectedListener {
 
-        {
+                    public void onItemSelected(AdapterView<?> parent,
+                                               View view, int pos, long id) {
+                        spinner_pos = pos;
+                        if (pos == 0) {
+                            /*
+                            ListView kalender_list = (ListView) findViewById(R.id.widget45);
+                            ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(
+                                    MainKalender.this, R.array.string_kalender_events_nasjonal, android.R.layout.simple_list_item_1);
+                            kalender_list.setAdapter(adapter2); */
+                        }
 
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-
-                kalender_active = 1;
-
-                position = pos_liste.get(position);
-
-                String dato = kalender_data[position][1] + " - " + kalender_data[position][2];
-
-                popup_window(kalender_data[position][6], kalender_data[position][5], dato, kalender_data[position][4]);
-
-            }
+                        if (pos == 1) {
+                            ListView kalender_list = (ListView) findViewById(R.id.widget45);
+                            ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(
+                                    MainKalender.this, R.array.string_kalender_events_weekends, android.R.layout.simple_list_item_1);
+                            kalender_list.setAdapter(adapter2);
+                        }
 
 
-        });
+                    }
+
+                    public void onNothingSelected(AdapterView parent) {
+                    }
+
+                }
+
+                spinner.setOnItemSelectedListener(new MyOnItemSelectedListener());
+
+
+                kalender_list.setOnItemClickListener(new AdapterView.OnItemClickListener()
+
+                {
+
+                    public void onItemClick(AdapterView<?> parent, View view,
+                                            int position, long id) {
+
+                        kalender_active = 1;
+
+                        position = pos_liste.get(position);
+
+                        String dato = kalender_data[position][1] + " - " + kalender_data[position][2];
+
+                        popup_window(kalender_data[position][6], kalender_data[position][5], dato, kalender_data[position][4]);
+
+                    }
+
+
+                });
     }
 
 
@@ -204,7 +232,7 @@ public class MainKalender extends Activity {
         final Dialog dialog = new Dialog(MainKalender.this);
         dialog.show();
         dialog.setContentView(R.layout.popup_event);
-        dialog.setTitle(overskrift);
+        //dialog.setTitle(overskrift);
         dialog.setCancelable(true);
 
 
@@ -219,9 +247,16 @@ public class MainKalender extends Activity {
         final Button lagre = (Button) dialog.findViewById(R.id.button_popup_event_lagre);
         final Button lukk = (Button) dialog.findViewById(R.id.button_popup_event_tilbake);
 
+        popup_overskrift.setTypeface(iaesteFontBold);
+        popup_dato.setTypeface(iaesteFont);
+        popup_sted.setTypeface(iaesteFont);
+        popup_info.setTypeface(iaesteFont);
+        lagre.setTypeface(iaesteFont);
+        lukk.setTypeface(iaesteFont);
+
         popup_overskrift.setText(overskrift);
-        popup_dato.setText(getString(R.string.kalender_01) + sted);
-        popup_sted.setText(getString(R.string.kalender_02) + dato);
+        popup_dato.setText(getString(R.string.kalender_01) + " " + sted);
+        popup_sted.setText(getString(R.string.kalender_02) + " " + dato);
         popup_info.setText(info);
 
         lagre.setOnClickListener(new View.OnClickListener() {
@@ -276,12 +311,13 @@ public class MainKalender extends Activity {
             case android.R.id.home:
                 // This is called when the Home (Up) button is pressed
                 // in the Action Bar.
-                Intent parentActivityIntent = new Intent(this, MainHome.class);
+               /* Intent parentActivityIntent = new Intent(this, MainHome.class);
                 parentActivityIntent.addFlags(
                         Intent.FLAG_ACTIVITY_CLEAR_TOP |
                                 Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(parentActivityIntent);
-                finish();
+                finish();*/
+                onBackPressed();
                 return true;
 
 

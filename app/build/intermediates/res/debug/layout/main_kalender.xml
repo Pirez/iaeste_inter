@@ -4,7 +4,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:background="@drawable/back_home_02_m">
+        android:background="@color/background">
     >
     <TextView
             android:text="@string/kalender_05"
@@ -21,6 +21,7 @@
             android:visibility="gone"
             >
     </Spinner>
+
     <ListView
             android:id="@+id/widget45"
             android:layout_width="wrap_content"

@@ -118,7 +118,7 @@
     <string name="credits_05">Utvikler:</string>
     <string name="credits_06">Johan Pires Bjørgen (LK Oslo)</string>
     <string name="credits_07">jpbjorgen@gmail.com</string>
-    <string name="credits_08">Ta kontakt hvis du har tips til forbedringer eller lurer på noko annet.</string>
+    <string name="credits_08">Ta kontakt hvis du har tips til forbedringer eller lurer på noe.</string>
     <string name="credits_09">Info om versjonen</string>
     <string name="credits_10"/>
     <string name="down_01">Laster ned data</string>
@@ -173,7 +173,9 @@
     <string name="soon">Fungerer ikke, kommer i nær fremtid</string>
     <string name="title_02">IAESTE Portalen</string>
     <string name="title_05">BK</string>
-    <string name="update_info">- Mulighet å lagre kontakter \n - Fikset en bug i Android 2.X ver, \n - Lagt inn random bilder fra portalen \nDato:24.02.13
+    <string name="update_info"> - Oppdatert design \n=- Dato: 06.08.15
+    </string>
+    <string name="update_info_old">- Mulighet å lagre kontakter \n - Fikset en bug i Android 2.X ver, \n - Lagt inn random bilder fra portalen \nDato:24.02.13
     </string>
     <string name="update_text_02">Oppdatere</string>
     <string name="url_check_member">http://iaeste.no/playground/android_app/portal/check_member</string>

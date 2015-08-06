@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
@@ -20,7 +22,7 @@ public class MainInnstillinger extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_inntillinger);
-        //getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
         Button back_home = (Button) findViewById(R.id.button_innstillinger_01);
         Button lagre = (Button) findViewById(R.id.button_innstillinger_lagre);
         final CheckBox autoBilde = (CheckBox) findViewById(R.id.check_innstilinger_autoBildehusk);
@@ -35,6 +37,11 @@ public class MainInnstillinger extends Activity {
             autoBilde.setChecked(false);
 
         }
+
+
+        SpannableString s = new SpannableString("Innstillinger");
+        s.setSpan(new TypefaceSpan(this, "iaesteFontBold.ttf"), 0, s.length(),
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
 
         Spinner valg_malform = (Spinner) findViewById(R.id.spinner_innstilliner_målform);
