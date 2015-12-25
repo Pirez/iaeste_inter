@@ -371,14 +371,13 @@ public class testLogin extends Activity implements Runnable {
         protected String doInBackground(Void... ignored) {
 
             String returnMessage = null;
-            SystemClock.sleep(1000);
-
-            /*
+            //SystemClock.sleep(1000);
             try {
-                //startCheck();
+                sjekkepost();
+
             } catch (Exception e) {
-                returnMessage = e.getMessage();
-            }*/
+                //returnMessage = e.getMessage();
+            }
             return returnMessage;
         }
 
@@ -387,10 +386,6 @@ public class testLogin extends Activity implements Runnable {
             String returnMessage = null;
 
             try {
-
-
-                sjekkepost();
-
 
             } catch (Exception e) {
                 //returnMessage = e.getMessage();
@@ -410,6 +405,7 @@ public class testLogin extends Activity implements Runnable {
 
             httpclient = new DefaultHttpClient();
             mail = toHex(mail);   //Convert to HEX
+            Log.d("forgot password",mail);
             httppost = new HttpPost("http://iaeste.no/playground/android_app/portal/forgot.php?det1=" + mail);
             // Add your data
             nameValuePairs = new ArrayList<NameValuePair>(1);
@@ -417,7 +413,7 @@ public class testLogin extends Activity implements Runnable {
             httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
             ResponseHandler<String> responseHandler = new BasicResponseHandler();
             String tekst_php = httpclient.execute(httppost, responseHandler);
-            Log.e("CODE0101", "OK!");
+            Log.d("forgot password", "OK!");
             String error = "error"; //Return val
             if (tekst_php.matches(error)) {
                 Toast.makeText(testLogin.this, R.string.login_17, Toast.LENGTH_LONG).show();
