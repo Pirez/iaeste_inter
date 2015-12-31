@@ -4,22 +4,37 @@
               android:layout_height="fill_parent"
         >
 
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1"
+        android:layout_margin="8dp"
+        android:background="@drawable/shape"
+        android:elevation="2dp"
+
+        >
+
     <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textSize="15sp"
-            android:layout_weight="1"
             android:id="@+id/label"
-            android:padding="14dp"
-            >
+            android:padding="16dp"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/user_img">
     </TextView>
 
 
-    <ImageView
-            android:id="@+id/user"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:src="@drawable/people"
-            ></ImageView>
+    <com.pkmmte.view.CircularImageView
+        android:layout_margin="4dp"
+            android:id="@+id/user_img"
+            android:layout_width="64dp"
+        android:layout_height="fill_parent"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        />
+            <!--android:src="@drawable/people"-->
 
+
+    </RelativeLayout>
 </LinearLayout>

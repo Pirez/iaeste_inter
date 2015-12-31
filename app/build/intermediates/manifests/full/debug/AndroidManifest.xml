@@ -7,8 +7,8 @@
     android:versionName="0.6.8" >
 
     <uses-sdk
-        android:minSdkVersion="16"
-        android:targetSdkVersion="16" />
+        android:minSdkVersion="17"
+        android:targetSdkVersion="17" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -21,11 +21,15 @@
         android:name="android.hardware.telephony"
         android:required="false" />
 
+    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:icon="@drawable/icon"
         android:label="IAESTE"
-        android:theme="@style/LightTheme" >
-        <activity android:name="com.iaesteintern.MainHome" >
+        android:theme="@style/Theme.2016" >
+        <activity android:name="com.iaesteintern.testLogin" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,36 +37,34 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.iaesteintern.testLogin"
-            android:label="IAESTE" />
-        <activity
             android:name="com.iaesteintern.MainLogin"
-            android:label="Logg inn " >
-        </activity>
+            android:label="Logg inn " />
         <activity
             android:name="com.iaesteintern.MainCredits"
-            android:label="  Credits " >
-        </activity>
+            android:label="  Credits " />
         <activity
             android:name="com.iaesteintern.MainKalender"
-            android:label="Kalender" >
-        </activity>
+            android:label="Kalender" />
         <activity
             android:name="com.iaesteintern.MainBKTopTen"
-            android:label="BK Top10 og Top3 LK " >
-        </activity>
+            android:label="BK Top10 og Top3 LK " />
         <activity
             android:name="com.iaesteintern.MainInnstillinger"
-            android:label=" Innstillinger" >
-        </activity>
+            android:label=" Innstillinger" />
         <activity
             android:name="com.iaesteintern.MainMedlemslister"
-            android:label=" LK " >
-        </activity>
-        <activity android:name="com.iaesteintern.MainHandlingsplan" />
+            android:label=" LK " />
+        <activity android:name="com.iaesteintern.MainNyheter" />
         <activity
-            android:name="com.iaesteintern.CollectionDemoActivity"
-            android:label="TEST" />
+            android:name="com.iaesteintern.MainHomeNav"
+            android:label=""
+            android:theme="@style/Theme.2016.NoActionBar" />
+        <activity
+            android:name="com.iaesteintern.MainPerson"
+            android:label="@string/title_activity_main__person" />
+        <activity
+            android:name="android.support.v7.widget.TestActivity"
+            android:label="RecyclerViewTestActivity" />
     </application>
 
 </manifest>

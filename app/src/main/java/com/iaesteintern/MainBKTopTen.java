@@ -1,13 +1,19 @@
 package com.iaesteintern;
 //package com.android.HelloWorld;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.util.Log;
 import android.view.*;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,7 +44,12 @@ public class MainBKTopTen extends Activity {
     private Vector<String> bk_lk = new Vector<String>();
     private GestureDetector gestureDetector;
     private ProgressDialog progressDialog;
+    Typeface iaesteFont ;
+    Typeface iaesteFontBold;
 
+    TextView BKTitle;
+    TextView meanTitle;
+    TextView hjelpeTekst;
 
     public static String getWord(String str, char seperator, int no) {
         int eind = 0;
@@ -68,10 +79,27 @@ public class MainBKTopTen extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainbk_topten);
-        //getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
 
         //final long t0 = System.currentTimeMillis();
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            getWindow().setStatusBarColor(getResources().getColor(R.color.secondary));
+        }
+
+
+        //Definerer selve fonten og setter font på der de skal være
+        iaesteFont = Typeface.createFromAsset(getAssets(), "fonts/iaesteFont.ttf");
+        iaesteFontBold = Typeface.createFromAsset(getAssets(), "fonts/iaesteFontBold.ttf");
+
+        BKTitle = (TextView) findViewById(R.id.text_mainbk_title);
+        meanTitle = (TextView) findViewById(R.id.mean_title);
+        hjelpeTekst = (TextView) findViewById(R.id.hjelpe_tekst);
+
+        BKTitle.setTypeface(iaesteFontBold);
+        meanTitle.setTypeface(iaesteFontBold);
+        hjelpeTekst.setTypeface(iaesteFont);
 
 
 
@@ -252,7 +280,7 @@ public class MainBKTopTen extends Activity {
         String[] lk_list = getResources().getStringArray(R.array.string_LK_BK);
 
 
-        setTitle(getString(R.string.title_05) + " - " + Integer.toString(lk_active + 1) + "/8");
+        setActionBarTitle(getString(R.string.title_05) + " - " + Integer.toString(lk_active + 1) + "/8");
         TextView title_lk = (TextView) findViewById(R.id.text_mainbk_title);
         title_lk.setText(lk_list[lk_active]);
 
@@ -269,7 +297,8 @@ public class MainBKTopTen extends Activity {
 
 
         TextView mean_value = (TextView) findViewById(R.id.text_mainbk_gjennom);
-        mean_value.setText(mean_valu(temp_poeng_i, len));
+        mean_value.setTypeface(iaesteFont);
+        mean_value.setText(mean_valu(temp_poeng_i, len) + " poeng per medlem");
 
 
         TextView one_1 = (TextView) findViewById(R.id.text_mainbk_first_place);
@@ -292,6 +321,28 @@ public class MainBKTopTen extends Activity {
         TextView nine_2 = (TextView) findViewById(R.id.text_mainbk_nine_place_lk);
         TextView ten_1 = (TextView) findViewById(R.id.text_mainbk_ten_place);
         TextView ten_2 = (TextView) findViewById(R.id.text_mainbk_ten_place_lk);
+
+        one_1.setTypeface(iaesteFont);
+        one_2.setTypeface(iaesteFont);
+        two_1.setTypeface(iaesteFont);
+        two_2.setTypeface(iaesteFont);
+        third_1.setTypeface(iaesteFont);
+        third_2.setTypeface(iaesteFont);
+        fourth_1.setTypeface(iaesteFont);
+        fourth_2.setTypeface(iaesteFont);
+        fith_1.setTypeface(iaesteFont);
+        fith_2.setTypeface(iaesteFont);
+        sixth_1.setTypeface(iaesteFont);
+        sixth_2.setTypeface(iaesteFont);
+        seventh_1.setTypeface(iaesteFont);
+        seventh_2.setTypeface(iaesteFont);
+        eight_1.setTypeface(iaesteFont);
+        eight_2.setTypeface(iaesteFont);
+        nine_1.setTypeface(iaesteFont);
+        nine_2.setTypeface(iaesteFont);
+        ten_1.setTypeface(iaesteFont);
+        ten_2.setTypeface(iaesteFont);
+
 
         one_1.setText(bk_data[lk_active][3][index_[len - 1]]);
         one_2.setText(bk_data[lk_active][2][index_[len - 1]]);
@@ -466,6 +517,18 @@ public class MainBKTopTen extends Activity {
         return index_;
     }
 
+
+    private void setActionBarTitle (String actionBarTitle) {
+        SpannableString s = new SpannableString(actionBarTitle);
+        s.setSpan(new TypefaceSpan(this, "iaesteFontBold.ttf"), 0, s.length(),
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        // Update the action bar title with the TypefaceSpan instance
+        ActionBar actionBar = getActionBar();
+        actionBar.setTitle(s);
+
+    }
+
         @Override
         public boolean onTouchEvent(MotionEvent event) {
             return gestureDetector.onTouchEvent(event);
@@ -489,11 +552,6 @@ public class MainBKTopTen extends Activity {
         switch (item.getItemId()) {
 
 
-            case R.id.topLK:
-                //popup_window_top3lk();
-                Toast.makeText(getApplicationContext(), "Fungere ikke med den nye portalen", Toast.LENGTH_LONG).show();
-                return true;
-
             case R.id.dinPlassering:
                 popup_window_dinplassering();
                 return true;
@@ -501,12 +559,7 @@ public class MainBKTopTen extends Activity {
             case android.R.id.home:
                 // This is called when the Home (Up) button is pressed
                 // in the Action Bar.
-                Intent parentActivityIntent = new Intent(this, MainHome.class);
-                parentActivityIntent.addFlags(
-                        Intent.FLAG_ACTIVITY_CLEAR_TOP |
-                                Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(parentActivityIntent);
-                finish();
+                onBackPressed();
                 return true;
 
 
@@ -518,6 +571,13 @@ public class MainBKTopTen extends Activity {
 
     }
 
+@Override
+public void onBackPressed() {
+    Intent intent = new Intent(MainBKTopTen.this, MainHomeNav.class);       //Går tilbake til MainHomeNav
+    startActivity(intent);
+    finish();
+
+}
 
     public void reload() {
         //Funker denne? Usikker, sjekk ut animasjon senere

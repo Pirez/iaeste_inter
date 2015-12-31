@@ -1,60 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.iaesteintern"
-          android:name="IAESTE"
-          android:versionCode="32"
-          android:versionName="0.6.8"
-          android:installLocation="auto">
-    <uses-sdk android:minSdkVersion="5"
-              android:targetSdkVersion="22"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
-    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
-    <uses-permission android:name="android.permission.SEND_SMS"/>
+    android:name="IAESTE"
+    package="com.iaesteintern"
+    android:installLocation="auto"
+    android:versionCode="32"
+    android:versionName="0.6.8">
 
-    <uses-feature android:name="android.hardware.telephony" android:required="false" />
+    <uses-sdk
+        android:minSdkVersion="5"
+        android:targetSdkVersion="22" />
 
-    <application android:label="IAESTE" android:icon="@drawable/icon"
-                 android:theme="@style/LightTheme">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
 
-        <activity android:name="com.iaesteintern.MainHome">
-                <intent-filter>
-                    <action android:name="android.intent.action.MAIN"/>
-                    <category android:name="android.intent.category.LAUNCHER"/>
-                </intent-filter>
+    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:icon="@drawable/icon"
+        android:label="IAESTE"
+        android:theme="@style/Theme.2016">
+        <activity android:name=".testLogin">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-
-
-        <activity android:name="com.iaesteintern.testLogin"
-                  android:label="IAESTE"/>
-
-
-        <activity android:name="com.iaesteintern.MainLogin"
-                  android:label="Logg inn ">
-        </activity>
-        <activity android:name="com.iaesteintern.MainCredits"
-                  android:label="  Credits ">
-        </activity>
-        <activity android:name="com.iaesteintern.MainKalender"
-                  android:label="Kalender">
-        </activity>
-
-        <activity android:name="com.iaesteintern.MainBKTopTen"
-                  android:label="BK Top10 og Top3 LK ">
-        </activity>
-        <activity android:name="com.iaesteintern.MainInnstillinger"
-                  android:label=" Innstillinger">
-        </activity>
-        <activity android:name="com.iaesteintern.MainMedlemslister"
-                  android:label=" LK ">
-        </activity>
-
-        <activity android:name=".MainHandlingsplan"/>
-        <activity android:name=".CollectionDemoActivity" android:label="TEST"/>
-
-
+        <activity
+            android:name=".MainLogin"
+            android:label="Logg inn " />
+        <activity
+            android:name=".MainCredits"
+            android:label="  Credits " />
+        <activity
+            android:name=".MainKalender"
+            android:label="Kalender" />
+        <activity
+            android:name=".MainBKTopTen"
+            android:label="BK Top10 og Top3 LK " />
+        <activity
+            android:name=".MainInnstillinger"
+            android:label=" Innstillinger" />
+        <activity
+            android:name=".MainMedlemslister"
+            android:label=" LK " />
+        <activity android:name=".MainNyheter" />
+        <activity
+            android:name=".MainHomeNav"
+            android:label=""
+            android:theme="@style/Theme.2016.NoActionBar" />
+        <activity
+            android:name=".MainPerson"
+            android:label="@string/title_activity_main__person" />
     </application>
-</manifest> 
+
+</manifest>

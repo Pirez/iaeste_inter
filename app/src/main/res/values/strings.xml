@@ -13,20 +13,22 @@
 
     <string-array name="url_list">
         <item>http://iaeste.no/playground/android_app/portal/member.php</item>
-        <item>http://iaeste.no/playground/android_app/portal/jobraising.php</item>
+        <item>http://iaeste.no/playground/android_app/portal/jobraising.php?det1=android_iaeste</item>
         <item>http://iaeste.no/playground/android_app/kalender</item>
         <item>http://iaeste.no/playground/android_app_0001/update_0_9_4_2.d</item>
+        <item>http://iaeste.no/playground/android_app/portal/news.php?det1=android_iaeste</item>
     </string-array>
 
     <string name="url_check_member">http://iaeste.no/playground/android_app/portal/check_member</string>
     <string name="url_pictures_member">https://www.iaeste.no/portal/files/casual/intern/profiles/</string>
-
+    <string name="url_pictures_news">https://www.iaeste.no/portal/files/casual/intern/bulletins/</string>
 
     <string-array name="filename_list">
         <item>tmp_medlemmer.d</item>
         <item>tmp_bk.d</item>
         <item>tmp_kalender.d</item>
         <item>tmp_info.d</item>
+        <item>tmp_news.d</item>
     </string-array>
 
     <string name="login_title">IAESTE Norge - Internapp</string>
@@ -101,11 +103,14 @@
     <string name="bk_01">Top 5 LK</string>
     <string name="bk_02">Din plassering</string>
     <string name="bk_03">Brukeren eksisterer ikke, vennligst prøv på nytt</string>
-    <string name="bk_04">Din plassering nasjonalt:</string>
+    <string name="bk_04">Din plassering:</string>
 
     <string name="bk_05">Du ligger på plassen</string>
     <string name="bk_06">av totalt</string>
-    <string name="bk_07">medlemmer som gjør BK.</string>
+    <string name="bk_07">medlemmer.</string>
+
+
+    <string name="news_01">Nyheter</string>
 
 
     <string name="kalender_01">Sted:</string>
@@ -115,7 +120,7 @@
     <string name="kalender_05">Velg event</string>
 
     <string name="medlem_1">medlemmer</string>
-    <string name="medlem_2">Person lagret i kontakter</string>
+    <string name="medlem_2">ble lagret i kontakter</string>
     <string name="medlem_3">Ring</string>
     <string name="medlem_4">Send SMS</string>
     <string name="medlem_5">Send mail</string>
@@ -198,6 +203,25 @@
         <item>Tromsø Weekend</item>
         <item>Stavanger Weekend</item>
     </string-array>
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main_home_nav">IAESTE Nyheter</string>
+    <string name="drawer_open">Menu opened</string>
+    <string name="drawer_close">Menu closed</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main__person">Main_Person</string>
+    <string name="title_activity_main_testtestestest">MainTESTTESTESTEST</string>
 
 
 </resources>

@@ -16,6 +16,7 @@
 
 
     <style name="BlackTheme" parent="android:Theme.Black">
+        <item name="android:textColorSecondary">@color/secondary_text_dark</item>
     </style>
 </resources>
 

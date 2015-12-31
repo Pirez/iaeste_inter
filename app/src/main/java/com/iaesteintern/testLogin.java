@@ -220,7 +220,7 @@ public class testLogin extends Activity implements Runnable {
 
     public void Move_to_next_check() {
 
-        Intent intent = new Intent(testLogin.this, MainHome.class);
+        Intent intent = new Intent(testLogin.this, MainHomeNav.class);
         startActivity(intent);
         finish();
 
@@ -297,7 +297,7 @@ public class testLogin extends Activity implements Runnable {
                         SharedPreferences.Editor editor = app_preferences.edit();
                         editor.putString("name", message);
                         editor.putBoolean("auth", true);
-                        editor.commit();
+                        editor.apply();
                         //Go too next screen
                         Move_to_next(); //Går inn
                     }
@@ -520,7 +520,7 @@ public class testLogin extends Activity implements Runnable {
             progressDialog.dismiss();
 
             //After download the update, go to the main screen
-            Intent intent = new Intent(testLogin.this, MainHome.class);
+            Intent intent = new Intent(testLogin.this, MainHomeNav.class);
             startActivity(intent);
             finish();
         }

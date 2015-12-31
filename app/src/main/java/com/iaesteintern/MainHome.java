@@ -59,6 +59,7 @@ public class MainHome extends ListActivity implements Runnable {
     List<NameValuePair> nameValuePairs;
     TextView textview;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -124,8 +125,8 @@ public class MainHome extends ListActivity implements Runnable {
 
                         //BK er fucka uansett
                         Toast.makeText(MainHome.this, "BK er for øyeblikket utilgjengelig", Toast.LENGTH_SHORT).show();
-                        /*Intent in = new Intent(MainHome.this, MainBKTopTen.class);
-                        startActivity(in);*/
+                        Intent in = new Intent(MainHome.this, MainBKTopTen.class);
+                        startActivity(in);
                     } else {
 
                         Toast.makeText(getApplicationContext(), R.string.login_01,
@@ -186,6 +187,12 @@ public class MainHome extends ListActivity implements Runnable {
                 Intent in2 = new Intent(MainHome.this, MainInnstillinger.class);
                 startActivity(in2);
                 return true;
+
+            case R.id.news:
+                Intent in4 = new Intent(MainHome.this, MainNyheter.class);
+                startActivity(in4);
+                return true;
+
             case R.id.credits:
                 Intent in3 = new Intent(MainHome.this, MainCredits.class);
                 startActivity(in3);

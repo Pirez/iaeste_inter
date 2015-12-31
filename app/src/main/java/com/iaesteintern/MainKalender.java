@@ -285,6 +285,8 @@ public class MainKalender extends Activity {
         eller "MEDLEMLISTER" hvis den er det returnere tilbake til "VALG LK", lk_list()
          */
         if (kalender_active == 0) {
+            Intent intent = new Intent(MainKalender.this, MainHomeNav.class);       //Går tilbake til MainHomeNav
+            startActivity(intent);
             finish();
         } else if (kalender_active == 1) {
 

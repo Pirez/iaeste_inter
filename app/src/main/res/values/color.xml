@@ -4,5 +4,7 @@
     <color name="primary">#fbaf34</color>
     <color name="secondary">#d29128</color>
     <color name="background">#262626</color>
-    <color name="white">#FFFFFF</color>
+    <color name="white1">#FFFFFF</color>
+    <color name="card_gray">#404040</color>
+    <color name="card_gray_lighter">#545454</color>
 </resources>

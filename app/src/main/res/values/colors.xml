@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_text_default_material_dark">#ffffff</color>
+    <color name="white">#fff</color>
+    <color name="primary_material_light">#fbb033</color>
+    <color name="primary_dark_material_light">#cd8711</color>
+    <color name="accent_material_light">#ffffff</color>
+    <color name="background_material_light">#1e1e1e</color>
+
+    <!--
+        Check Android Theme colors for color reference:
+        https://developer.android.com/training/material/images/ThemeColors.png
+
+        Refer also to Color palette for the UI colors you should use:
+        http://www.google.com/design/spec/style/color.html#color-ui-color-palette
+    -->
+
+
+    <color name="colorBackground">#4b4b4b</color>
+    <color name="black">#000000</color>
+    <color name="secondary_text_material_dark">#ffffff</color>
+    <color name="dim_foreground_dark">#ffffff</color>
+    <color name="secondary_text_dark">#ffffff</color>
+    <color name="secondary_text_material_light">#ffffff</color>
+    <color name="primary_text_material_dark">#ffffff</color>
+    <color name="primary_text_material_light">#ffffff</color>
+    <color name="white3">#ffffff</color>
+
+    <drawable name="pressed_gray">#0c000000</drawable>
+    <drawable name="selected_gray">#2c000000</drawable>
+</resources>

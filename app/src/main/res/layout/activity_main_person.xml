@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="8dp"
+    tools:context=".MainPerson"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1"
+        android:orientation="vertical"
+        android:background="@drawable/shape"
+        >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            android:id="@+id/viewA"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/cover_img"
+                />
+
+            <TextView
+                android:id="@+id/text_navn"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Test Testesen"
+                android:textSize="24sp"
+                android:padding="16dp"
+                android:textColor="@color/white3"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="left|bottom" />
+
+            <com.pkmmte.view.CircularImageView
+                android:id="@+id/member_img"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:baselineAlignBottom="@+id/innerView"
+                app:border="true"
+                android:layout_gravity="center"
+                app:border_color="@color/primary_material_light"
+                app:border_width="2dp"
+                app:shadow="true"
+                 />
+
+
+        </FrameLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:id="@+id/viewB"
+            android:orientation="vertical"
+            android:padding="8dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:background="@color/card_gray_lighter"
+                android:elevation="2dp"
+                android:padding="8dp"
+                >
+                <ImageButton
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/ic_call_24dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:id="@+id/call_button" />
+
+                <TextView
+                    android:id="@+id/tele_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tlf. 43523452"
+                    android:textSize="24sp"
+                    android:layout_marginStart="8dp"
+                    android:autoLink="phone"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/call_button"
+                     />
+
+                <ImageButton
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_comment_24dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:id="@+id/texting_button"
+                    android:layout_alignTop="@+id/call_button"
+                    android:layout_alignParentRight="true" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/card_gray_lighter"
+                android:elevation="2dp"
+                android:padding="8dp"
+                >
+                <ImageButton
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/ic_email_24dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:id="@+id/mail_button" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mail: testesten@gmail.com"
+                    android:textSize="18sp"
+                    android:id="@+id/mail_string"
+                    android:layout_marginStart="8dp"
+                    android:autoLink="email"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/mail_button"
+                    android:layout_marginLeft="16dp" />
+            </RelativeLayout>
+
+
+            <Button
+                android:layout_width="196dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="64dp"
+                android:paddingBottom="16dp"
+                android:gravity="center"
+                android:padding="16dp"
+                android:backgroundTint="@color/primary_material_light"
+                android:layout_gravity="center_horizontal"
+                android:text="Legg til kontakt"
+                android:id="@+id/add_contact"
+                android:textSize="16sp"
+
+                />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
