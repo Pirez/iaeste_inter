@@ -1,36 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
              android:layout_width="fill_parent"
              android:layout_height="fill_parent"
              android:stretchColumns="1"
-             android:background="@drawable/back_home_02_m"
-        >
+            android:layout_margin="8dp"
+    android:orientation="vertical"
+            android:background="@drawable/shape"
+    android:elevation="2dp"
+    >
 
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1"
+        android:padding="16dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/shape_lighter"
+        android:elevation="2dp"
+        android:id="@+id/viewA"
+        >
 
     <TextView
             android:id="@+id/text_mainbk_title"
             android:text="10 på topp"
             android:textSize="20sp"
             android:textStyle="bold"
-
+        android:textColor="@color/white"
             />
 
     <TableRow>
         <TextView
                 android:text="1."
                 android:padding="0dip"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+            android:textColor="@color/white"/>
         <TextView
                 android:id="@+id/text_mainbk_first_place"
                 android:text=""
                 android:padding="0dip"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+            android:textColor="@color/white"/>
 
         <TextView
                 android:id="@+id/text_mainbk_first_place_lk"
                 android:text=""
                 android:padding="0dip"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+            android:textColor="@color/white"/>
 
     </TableRow>
 
@@ -38,44 +54,51 @@
         <TextView
                 android:text="2."
                 android:padding="0dip"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+            android:textColor="@color/white"/>
         <TextView
                 android:id="@+id/text_mainbk_second_place"
 
                 android:text=""
                 android:padding="0dip"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+            android:textColor="@color/white"/>
 
         <TextView
                 android:id="@+id/text_mainbk_second_place_lk"
                 android:text=""
                 android:padding="0dip"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+            android:textColor="@color/white"/>
     </TableRow>
 
     <TableRow>
         <TextView
                 android:text="3."
                 android:padding="0dip"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+            android:textColor="@color/white"/>
         <TextView
                 android:id="@+id/text_mainbk_third_place"
 
                 android:text=""
                 android:padding="0dip"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+            android:textColor="@color/white"/>
         <TextView
                 android:id="@+id/text_mainbk_third_place_lk"
                 android:text=""
                 android:padding="0dip"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+            android:textColor="@color/white"/>
     </TableRow>
 
     <TableRow>
         <TextView
                 android:text="4."
                 android:padding="0dip"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+            android:textColor="@color/white"/>
 
         />
         <TextView
@@ -83,14 +106,16 @@
 
                 android:text=""
                 android:padding="0dip"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+            android:textColor="@color/white"/>
 
         />
         <TextView
                 android:id="@+id/text_mainbk_fourth_place_lk"
                 android:text=""
                 android:padding="0dip"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+            android:textColor="@color/white"/>
 
         />
     </TableRow>
@@ -99,13 +124,15 @@
         <TextView
                 android:text="5."
                 android:padding="0dip"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+            android:textColor="@color/white"/>
         <TextView
                 android:id="@+id/text_mainbk_fith_place"
 
                 android:text=""
                 android:padding="0dip"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+            android:textColor="@color/white"/>
 
         />
         <TextView
@@ -113,7 +140,8 @@
 
                 android:text=""
                 android:padding="0dip"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+            android:textColor="@color/white"/>
 
         />
     </TableRow>
@@ -122,7 +150,8 @@
         <TextView
                 android:text="6."
                 android:padding="0dip"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+            android:textColor="@color/white"/>
 
         />
         <TextView
@@ -130,7 +159,8 @@
 
                 android:text=""
                 android:padding="0dip"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+            android:textColor="@color/white"/>
 
         />
         <TextView
@@ -138,14 +168,16 @@
 
                 android:text=""
                 android:padding="0dip"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+            android:textColor="@color/white"/>
     </TableRow>
 
     <TableRow>
         <TextView
                 android:text="7."
                 android:padding="0dip"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+            android:textColor="@color/white"/>
 
         />
         <TextView
@@ -153,7 +185,8 @@
 
                 android:text=""
                 android:padding="0dip"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+            android:textColor="@color/white"/>
 
         />
         <TextView
@@ -161,7 +194,8 @@
 
                 android:text=""
                 android:padding="0dip"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+            android:textColor="@color/white"/>
 
         />
     </TableRow>
@@ -170,7 +204,8 @@
         <TextView
                 android:text="8."
                 android:padding="0dip"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+            android:textColor="@color/white"/>
 
         />
         <TextView
@@ -178,7 +213,8 @@
 
                 android:text=""
                 android:padding="0dip"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+            android:textColor="@color/white"/>
 
         />
         <TextView
@@ -186,7 +222,8 @@
 
                 android:text=""
                 android:padding="0dip"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+            android:textColor="@color/white"/>
 
         />
     </TableRow>
@@ -195,7 +232,8 @@
         <TextView
                 android:text="9."
                 android:padding="0dip"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+            android:textColor="@color/white"/>
 
         />
         <TextView
@@ -203,12 +241,14 @@
 
                 android:text=""
                 android:padding="0dip"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+            android:textColor="@color/white"/>
         <TextView
                 android:id="@+id/text_mainbk_nine_place_lk"
 
                 android:text=""
                 android:padding="0dip"
+            android:textColor="@color/white"
                 />
     </TableRow>
 
@@ -216,15 +256,16 @@
         <TextView
                 android:text="10."
                 android:padding="0dip"
-                android:textSize="14sp"/>
+            android:textSize="14sp"
+            android:textColor="@color/white"/>
 
         />
         <TextView
                 android:id="@+id/text_mainbk_ten_place"
-
                 android:text=""
                 android:padding="0dip"
-                android:textSize="14sp"/>
+            android:textSize="14sp"
+            android:textColor="@color/white"/>
 
         />
         <TextView
@@ -232,16 +273,29 @@
 
                 android:text=""
                 android:padding="0dip"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+                android:textColor="@color/white"/>
 
         />
     </TableRow>
+</TableLayout>
 
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1"
+        android:padding="16dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/shape_lighter"
+        android:elevation="2dp"
+        android:layout_below="@id/viewA"
+        >
     <TextView
+        android:id="@+id/mean_title"
             android:text="@string/bk_topten_01"
             android:textSize="20sp"
             android:textStyle="bold"
-
+            android:textColor="@color/white"
             />
 
     <TableRow>
@@ -249,15 +303,21 @@
         <TextView
                 android:id="@+id/text_mainbk_gjennom"
                 android:text="60"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+            android:textColor="@color/white"/>
         />
 
-        <TextView
-                android:text="@string/bk_topten_02"
-                android:padding="0dip"
-                android:textSize="13sp"/>
-        />
+
     </TableRow>
 
-
 </TableLayout>
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:id="@+id/hjelpe_tekst"
+    android:text="Sveip til høyre eller venstre for å gå til neste LK"
+    android:textColor="@color/background"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true" />
+</RelativeLayout>

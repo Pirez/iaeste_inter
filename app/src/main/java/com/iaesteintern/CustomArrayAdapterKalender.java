@@ -40,8 +40,8 @@ public class CustomArrayAdapterKalender extends ArrayAdapter<CharSequence> {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View rowView = inflater.inflate(android.R.layout.simple_spinner_item, parent, false);
-        TextView textView = (TextView) rowView.findViewById(R.id.label);
+        View rowView = inflater.inflate(R.layout.main_kalenderliste, parent, false);
+        TextView textView = (TextView) rowView.findViewById(R.id.kal_label);
 
         // henter inn arrayen for å sette elementene i den inn i textviewen
 

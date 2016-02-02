@@ -68,9 +68,7 @@
 
     <string name="bk_topten_01">Gjennomsnittet er:</string>
     <string name="bk_topten_02">poeng per medlem</string>
-    <string name="bk_topten_03"></string>
-    <string name="bk_topten_04"></string>
-    <string name="bk_topten_05"></string>
+
 
 
     <string name="loginkoble_01">Kobler seg til serveren......</string>

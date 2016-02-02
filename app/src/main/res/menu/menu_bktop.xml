@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-      showAsAction="ifRoom">
+      android:showAsAction="ifRoom">
 
-
-    <item android:id="@+id/topLK"
-          android:title="@string/bk_01"
-          android:icon="@drawable/info"
-
-            />
 
     <item android:id="@+id/dinPlassering"
           android:title="@string/bk_02"

@@ -220,7 +220,7 @@ public class testLogin extends Activity implements Runnable {
 
     public void Move_to_next_check() {
 
-        Intent intent = new Intent(testLogin.this, MainHome.class);
+        Intent intent = new Intent(testLogin.this, MainHomeNav.class);
         startActivity(intent);
         finish();
 
@@ -297,7 +297,7 @@ public class testLogin extends Activity implements Runnable {
                         SharedPreferences.Editor editor = app_preferences.edit();
                         editor.putString("name", message);
                         editor.putBoolean("auth", true);
-                        editor.commit();
+                        editor.apply();
                         //Go too next screen
                         Move_to_next(); //Går inn
                     }
@@ -371,14 +371,13 @@ public class testLogin extends Activity implements Runnable {
         protected String doInBackground(Void... ignored) {
 
             String returnMessage = null;
-            SystemClock.sleep(1000);
-
-            /*
+            //SystemClock.sleep(1000);
             try {
-                //startCheck();
+                sjekkepost();
+
             } catch (Exception e) {
-                returnMessage = e.getMessage();
-            }*/
+                //returnMessage = e.getMessage();
+            }
             return returnMessage;
         }
 
@@ -387,10 +386,6 @@ public class testLogin extends Activity implements Runnable {
             String returnMessage = null;
 
             try {
-
-
-                sjekkepost();
-
 
             } catch (Exception e) {
                 //returnMessage = e.getMessage();
@@ -410,6 +405,7 @@ public class testLogin extends Activity implements Runnable {
 
             httpclient = new DefaultHttpClient();
             mail = toHex(mail);   //Convert to HEX
+            Log.d("forgot password",mail);
             httppost = new HttpPost("http://iaeste.no/playground/android_app/portal/forgot.php?det1=" + mail);
             // Add your data
             nameValuePairs = new ArrayList<NameValuePair>(1);
@@ -417,7 +413,7 @@ public class testLogin extends Activity implements Runnable {
             httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
             ResponseHandler<String> responseHandler = new BasicResponseHandler();
             String tekst_php = httpclient.execute(httppost, responseHandler);
-            Log.e("CODE0101", "OK!");
+            Log.d("forgot password", "OK!");
             String error = "error"; //Return val
             if (tekst_php.matches(error)) {
                 Toast.makeText(testLogin.this, R.string.login_17, Toast.LENGTH_LONG).show();
@@ -524,7 +520,7 @@ public class testLogin extends Activity implements Runnable {
             progressDialog.dismiss();
 
             //After download the update, go to the main screen
-            Intent intent = new Intent(testLogin.this, MainHome.class);
+            Intent intent = new Intent(testLogin.this, MainHomeNav.class);
             startActivity(intent);
             finish();
         }
