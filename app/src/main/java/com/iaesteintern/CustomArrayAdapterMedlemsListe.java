@@ -57,7 +57,7 @@ public class CustomArrayAdapterMedlemsListe extends ArrayAdapter<String> {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.main_medlemslister, parent, false);
 
-
+        //historyholder er noe drit jeg bare kopierte fra nettet, bare drit i navnet egentlig
         holder = new HistoryHolder();
         holder.textView = (TextView) rowView.findViewById(R.id.label);
         holder.imgUser = (CircularImageView) rowView.findViewById(R.id.user_img);

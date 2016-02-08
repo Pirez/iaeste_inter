@@ -31,5 +31,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:21.0.3'
     compile 'com.android.support:recyclerview-v7:21.0.3'
     compile 'com.pkmmte.view:circularimageview:1.1'
+    compile 'com.roomorama:caldroid:2.3.1'
 
 }

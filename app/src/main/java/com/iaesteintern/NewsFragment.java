@@ -194,9 +194,10 @@ public class NewsFragment extends Fragment {
             //new DownloadImageTask((ImageView) findViewById(R.id.main_nyhet_bilde)).execute(urlLink);
             Picasso.with(getActivity())
                     .load(urlLink)
-                    .placeholder(R.drawable.people)
+                    .placeholder(R.drawable.iaesteorange)
                     .error(R.drawable.iaesteorange)
-                    .fit()
+                    .resize(300, nyhetBilde.getMaxHeight())
+                    .centerInside()
                     .into(nyhetBilde);
 
             /*nyhetBilde.setScaleType(ImageView.ScaleType.FIT_XY);

@@ -62,6 +62,7 @@
         <activity
             android:name="com.iaesteintern.MainPerson"
             android:label="@string/title_activity_main__person" />
+        <activity android:name="com.iaesteintern.MainKalendarEvent" />
         <activity
             android:name="android.support.v7.widget.TestActivity"
             android:label="RecyclerViewTestActivity" />

@@ -2,10 +2,12 @@ package com.iaesteintern;
 //package com.android.HelloWorld;
 //TODO: Fikse hele denne screen (men er ikkje kritisk!)
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -18,6 +20,9 @@ import java.util.Locale;
 public class MainInnstillinger extends Activity {
 
     Locale locale;
+    Typeface iaesteFont;
+    Typeface iaesteFontBold;
+    TextView textMalform;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,8 +30,14 @@ public class MainInnstillinger extends Activity {
         getActionBar().setDisplayHomeAsUpEnabled(true);
         Button back_home = (Button) findViewById(R.id.button_innstillinger_01);
         Button lagre = (Button) findViewById(R.id.button_innstillinger_lagre);
-        final CheckBox autoBilde = (CheckBox) findViewById(R.id.check_innstilinger_autoBildehusk);
+        iaesteFont = Typeface.createFromAsset(getAssets(), "fonts/iaesteFont.ttf");
+        iaesteFont = Typeface.createFromAsset(getAssets(), "fonts/iaesteFont.ttf");
 
+
+        final CheckBox autoBilde = (CheckBox) findViewById(R.id.check_innstilinger_autoBildehusk);
+        iaesteFont = Typeface.createFromAsset(getAssets(), "fonts/iaesteFont.ttf");
+
+        iaesteFont = Typeface.createFromAsset(getAssets(), "fonts/iaesteFont.ttf");
 
         final SharedPreferences innstillinger = getSharedPreferences("Innstillinger", MODE_PRIVATE);
         SharedPreferences.Editor inn = innstillinger.edit();
@@ -42,8 +53,11 @@ public class MainInnstillinger extends Activity {
         SpannableString s = new SpannableString("Innstillinger");
         s.setSpan(new TypefaceSpan(this, "iaesteFontBold.ttf"), 0, s.length(),
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ActionBar actionBar = getActionBar();
+        actionBar.setTitle(s);
 
-
+        textMalform = (TextView) findViewById(R.id.text_innstillinger_malform);
+        textMalform.setTypeface(iaesteFont);
         Spinner valg_malform = (Spinner) findViewById(R.id.spinner_innstilliner_målform);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this, R.array.malform, android.R.layout.simple_spinner_item);
@@ -112,36 +126,25 @@ public class MainInnstillinger extends Activity {
             }
         });
 
-        back_home.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View a) {
-                // Intent in = new Intent(MainInnstillinger.this, MainHome.class);
-                // startActivity(in);
-                finish();
-            }
-        });
+
 
 
     }
 
 
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                // This is called when the Home (Up) button is pressed
-                // in the Action Bar.
-                Intent parentActivityIntent = new Intent(this, MainHome.class);
-                parentActivityIntent.addFlags(
-                        Intent.FLAG_ACTIVITY_CLEAR_TOP |
-                                Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(parentActivityIntent);
-                finish();
-                return true;
+
+    @Override
+    public void onBackPressed() {
+        /*
+        Sjekk hvis du er inne i "VALG LK"  hvis den er det returnere den til main_home
+        eller "MEDLEMLISTER" hvis den er det returnere tilbake til "VALG LK", lk_list()
+         */
+        Intent intent = new Intent(MainInnstillinger.this, MainHomeNav.class);       //Går tilbake til MainHomeNav
+        startActivity(intent);
+        finish();
 
 
-            default:
-                return false;
-
-        }}
+    }
 
 
 

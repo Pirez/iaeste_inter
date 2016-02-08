@@ -15,6 +15,7 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -27,6 +28,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.pkmmte.view.CircularImageView;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,6 +72,7 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
     private boolean mUserLearnedDrawer;
 
     Typeface iaesteFont;
+    Typeface iaesteFontBold;
 
 
     @Override
@@ -80,6 +85,7 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
         mUserLearnedDrawer = sp.getBoolean(PREF_USER_LEARNED_DRAWER, false);
 
         iaesteFont = Typeface.createFromAsset(getActivity().getAssets(), "fonts/iaesteFont.ttf");
+        iaesteFontBold = Typeface.createFromAsset(getActivity().getAssets(), "fonts/iaesteFontBold.ttf");
 
         if (savedInstanceState != null) {
             mCurrentSelectedPosition = savedInstanceState.getInt(STATE_SELECTED_POSITION);
@@ -235,17 +241,111 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
     }
 
 
-    public void setUserData(String user, String email, Bitmap avatar) {
-        ImageView avatarContainer = (ImageView) mFragmentContainerView.findViewById(R.id.imgAvatar);
+    public void setUserData(String user, String email, String idiaeste, String picture) {
+        ImageView memberImg = (ImageView) mFragmentContainerView.findViewById(R.id.member_img);
+        ImageView imgBackground = (ImageView) mFragmentContainerView.findViewById(R.id.imgBackground);
+
         TextView textEmail = (TextView) mFragmentContainerView.findViewById(R.id.txtUserEmail);
         textEmail.setText(email);
         TextView textUsername = (TextView) mFragmentContainerView.findViewById(R.id.txtUsername);
         textUsername.setText(user);
+        TextView textLC = (TextView) mFragmentContainerView.findViewById(R.id.txtLC);
+
+
+
         textEmail.setTypeface(iaesteFont);
         textUsername.setTypeface(iaesteFont);
+        textLC.setTypeface(iaesteFontBold);
+
+        String urLink = getString(R.string.url_pictures_member) + picture;
+
+        //personal image
+        Picasso.with(getActivity())
+                .load(urLink)
+                .placeholder(R.drawable.silhouette)
+                .error(R.drawable.silhouette)
+                .fit()
+                .transform(new CircleTransform())
+                .into(memberImg);
+
+        switch(idiaeste) {
+            case "19":
+                textLC.setText("LK Bergen");
+                Picasso.with(getActivity())
+                        .load(R.drawable.bergen)
+                        .fit()
+                        .into(imgBackground);
 
 
-        avatarContainer.setImageDrawable(new RoundImage(avatar));
+                break;
+
+            case "20":
+                textLC.setText("LK Oslo");
+
+                Picasso.with(getActivity())
+                        .load(R.drawable.oslo2)
+                        .fit()
+                        .into(imgBackground);
+                break;
+
+            case "21":
+                textLC.setText("LK Stavanger");
+
+                Picasso.with(getActivity())
+                        .load(R.drawable.stavanger)
+                        .fit()
+                        .into(imgBackground);
+                break;
+
+            case "22":
+                textLC.setText("LK Tromsø");
+
+                Picasso.with(getActivity())
+                        .load(R.drawable.tromso)
+                        .fit()
+                        .into(imgBackground);
+                break;
+
+            case "23":
+                textLC.setText("LK Trondheim");
+
+                Picasso.with(getActivity())
+                        .load(R.drawable.trondheim)
+                        .fit()
+                        .into(imgBackground);
+                break;
+            case "24":
+                textLC.setText("LK Ås");
+
+                Picasso.with(getActivity())
+                        .load(R.drawable.aas)
+                        .fit()
+                        .into(imgBackground);
+                break;
+
+            case "25":
+                textLC.setText("LK Grimstad");
+
+                Picasso.with(getActivity())
+                        .load(R.drawable.iaesteorange)
+                        .fit()
+                        .into(imgBackground);
+                break;
+
+            default:
+
+                textLC.setText("Ingen tilhørende LK");
+                textLC.setTextSize(14);
+                Picasso.with(getActivity())
+                        .load(R.drawable.iaesteorange)
+                        .resize(300, imgBackground.getMaxHeight())
+                                .centerInside()
+                                .into(imgBackground);
+        }
+
+
+
+
     }
 
     public View getGoogleDrawer() {
@@ -332,6 +432,32 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
             return mBitmap;
         }
 
+
+
+    }
+
+    public String convertHexToString(String hex) {
+
+        StringBuilder sb = new StringBuilder();
+        StringBuilder temp = new StringBuilder();
+
+        //49204c6f7665204a617661 split into two characters 49, 20, 4c...
+
+        int hex_len = hex.length();
+
+        for (int i = 0; i < hex_len - 1; i += 2) {
+
+            //grab the hex in pairs
+            String output = hex.substring(i, (i + 2));
+            //convert hex to decimal
+            int decimal = Integer.parseInt(output, 16);
+            //convert the decimal to character
+            sb.append((char) decimal);
+
+            temp.append(decimal);
+        }
+
+        return sb.toString();
     }
 
 }

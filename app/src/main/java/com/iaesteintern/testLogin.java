@@ -48,6 +48,8 @@ public class testLogin extends Activity implements Runnable {
     List<NameValuePair> nameValuePairs;
     CheckBox check;
     ProgressDialog progressDialog;
+    String userInfo;
+    String[] userInfoArray;
 
 
     public void onCreate(Bundle savedInstanceState) {
@@ -128,7 +130,7 @@ public class testLogin extends Activity implements Runnable {
                     SharedPreferences.Editor editor = app_preferences.edit();
                     editor.putString("username", name);
                     editor.putString("password", pass);
-                    editor.commit();
+                    editor.apply();
                 }
                 if (name.equals("") || pass.equals("")) {
                     Toast.makeText(testLogin.this, R.string.login_11, Toast.LENGTH_LONG).show();
@@ -265,45 +267,56 @@ public class testLogin extends Activity implements Runnable {
             dialog.show();
         }
 
-                @Override
-                protected String doInBackground(Void... ignored) {
+        @Override
+        protected String doInBackground(Void... ignored) {
 
-                    String returnMessage = null;
-                    //SystemClock.sleep(1200);
+            String returnMessage = null;
+            //SystemClock.sleep(1200);
 
-                    try {
+            try {
 
-                        returnMessage = startCheck();
+                returnMessage = startCheck();
 
-                    } catch (Exception e) {
-                        //returnMessage = e.getMessage();
-                    }
+            } catch (Exception e) {
+                //returnMessage = e.getMessage();
+            }
 
 
-                    return returnMessage;
-                }
+            return returnMessage;
+        }
 
-                @Override
-                protected void onPostExecute(String message) {
-                    String returnMessage = null;
-                    String error = "error";
-                    if (message.matches(error)) {
-                        Toast.makeText(testLogin.this, R.string.login_03, Toast.LENGTH_LONG).show();
-                        SharedPreferences.Editor editor = app_preferences.edit();
-                        editor.putBoolean("auth", false);
-                        editor.commit();
-                    } else {
-                        Toast.makeText(testLogin.this, "Velkommen " + message, Toast.LENGTH_LONG).show();
-                        SharedPreferences.Editor editor = app_preferences.edit();
-                        editor.putString("name", message);
-                        editor.putBoolean("auth", true);
-                        editor.apply();
-                        //Go too next screen
-                        Move_to_next(); //Går inn
-                    }
-                    dialog.dismiss();
-                    if (message != null) {
-                        // process the error (show alert etc)
+        @Override
+        protected void onPostExecute(String message) {
+            String returnMessage = null;
+            String error = "error";
+            if (message.matches(error)) {
+                Toast.makeText(testLogin.this, R.string.login_03, Toast.LENGTH_LONG).show();
+                SharedPreferences.Editor editor = app_preferences.edit();
+                editor.putBoolean("auth", false);
+                editor.commit();
+            } else {
+                Toast.makeText(testLogin.this, "Velkommen " + message, Toast.LENGTH_LONG).show();
+
+                SharedPreferences.Editor editor = app_preferences.edit();
+                editor.putString("phpOutput", message);
+               String hexUserInfo = message;
+                Log.d("array:", hexUserInfo);
+
+                //convertHexToString(hexUserInfo);
+
+                userInfoArray = hexUserInfo.split("\\*");
+
+                editor.putString("name", convertHexToString(userInfoArray[0]));
+                editor.putString("idiaeste", convertHexToString(userInfoArray[1]));
+                editor.putString("picture", convertHexToString(userInfoArray[2]));
+                editor.putBoolean("auth", true);
+                editor.apply();
+                //Go too next screen
+                Move_to_next(); //Går inn
+            }
+            dialog.dismiss();
+            if (message != null) {
+                // process the error (show alert etc)
                 //Log.e("StartPaymentAsyncTask", String.format("I received an error: %s", message));
             } else {
                 //Log.i("StartPaymentAsyncTask", "No problems");
@@ -317,28 +330,28 @@ public class testLogin extends Activity implements Runnable {
 
 
 
-            String tekst_php = "";
-            try {
-                httpclient = new DefaultHttpClient();
+        String tekst_php = "";
+        try {
+            httpclient = new DefaultHttpClient();
             Log.e("CODE0101", name);
             name = toHex(name);   //Convert to HEX
 
-            httppost = new HttpPost("http://iaeste.no/playground/android_app/portal/check_member.php?det1=" + name + "&det2=" + pass);
+            httppost = new HttpPost("http://iaeste.no/playground/android_app/portal/check_member_2.php?det1=" + name + "&det2=" + pass);
             // Add your data
             nameValuePairs = new ArrayList<NameValuePair>(2);
-                Log.e("ValuePairs", name);
-                nameValuePairs.add(new BasicNameValuePair("det1", name.trim()));
+            Log.e("ValuePairs", name);
+            nameValuePairs.add(new BasicNameValuePair("det1", name.trim()));
             nameValuePairs.add(new BasicNameValuePair("det2", pass.trim()));
-                Log.e("ValuePairs LAGT INN", name + pass);
-               httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-                Log.e("Vafdsfds", name + pass);
+            Log.e("ValuePairs LAGT INN", name + pass);
+            httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+            Log.e("Vafdsfds", name + pass);
             ResponseHandler<String> responseHandler = new BasicResponseHandler();
-                Log.e("ValuePairs LAGT INN", name);
-                tekst_php = httpclient.execute(httppost, responseHandler);
-                Log.e("teksphp ok", tekst_php);
+            Log.e("ValuePairs LAGT INN", name);
+            tekst_php = httpclient.execute(httppost, responseHandler);
+            Log.e("teksphp ok", tekst_php);
 
 
-                 //Return val
+            //Return val
             //Confirm the user (//TODO Should change it in the future? Easy to hack!)
 
             inputStream.close();
@@ -452,11 +465,9 @@ public class testLogin extends Activity implements Runnable {
         } catch (Exception e) {
             //Toast.makeText(testLogin.this, "error" + e.toString(), Toast.LENGTH_SHORT).show();
         }
-
         String error = "error"; //Return val
         //setTitle(R.string.login_title);
         if (tekst_php.matches(error)) {
-
             SharedPreferences.Editor editor = app_preferences.edit();
             //Setter alt til null...
             editor.putBoolean("auth", false);
@@ -464,7 +475,6 @@ public class testLogin extends Activity implements Runnable {
             editor.putString("username", "");
             editor.putString("password", "");
             editor.commit();
-
             //Toast.makeText(MainHome.this, Str_user, Toast.LENGTH_LONG).show();
             //handler.sendEmptyMessage(0); // close progressbar
             //logout();
@@ -526,5 +536,28 @@ public class testLogin extends Activity implements Runnable {
         }
     };
 
-}
+    public String convertHexToString(String hex) {
 
+        StringBuilder sb = new StringBuilder();
+        StringBuilder temp = new StringBuilder();
+
+        //49204c6f7665204a617661 split into two characters 49, 20, 4c...
+
+        int hex_len = hex.length();
+
+        for (int i = 0; i < hex_len - 1; i += 2) {
+
+            //grab the hex in pairs
+            String output = hex.substring(i, (i + 2));
+            //convert hex to decimal
+            int decimal = Integer.parseInt(output, 16);
+            //convert the decimal to character
+            sb.append((char) decimal);
+
+            temp.append(decimal);
+        }
+
+        return sb.toString();
+    }
+
+}

@@ -19,7 +19,7 @@
         <item>http://iaeste.no/playground/android_app/portal/news.php?det1=android_iaeste</item>
     </string-array>
 
-    <string name="url_check_member">http://iaeste.no/playground/android_app/portal/check_member</string>
+    <string name="url_check_member">http://iaeste.no/playground/android_app/portal/check_member_2</string>
     <string name="url_pictures_member">https://www.iaeste.no/portal/files/casual/intern/profiles/</string>
     <string name="url_pictures_news">https://www.iaeste.no/portal/files/casual/intern/bulletins/</string>
 
@@ -30,6 +30,7 @@
         <item>tmp_info.d</item>
         <item>tmp_news.d</item>
     </string-array>
+
 
     <string name="login_title">IAESTE Norge - Internapp</string>
     <string name="login_01">Vennligst logg inn</string>

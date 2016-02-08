@@ -10,6 +10,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
@@ -25,12 +26,15 @@ public class MainKalender extends Activity {
     int list_pos = 0;
     int i0;
     int kalender_active = 0; //sjekker hvis den er i list (0) eller popup (1)
-    int lengden_kalender = 3000;
+    int lengden_kalender = 30;
     private String[][] kalender_data = new String[lengden_kalender][7];   //PASS PÅ LENGDEN AV DATA DEN FÅR INN, aka 7 LK, 5 DATA INFORMASJON, 100 MEDLEMMER
+    String[] kalenderNavn;
     private Vector<String> kalender_balle = new Vector<String>();
     ArrayList<Integer> pos_liste;
     Typeface iaesteFont;
     Typeface iaesteFontBold;
+    ArrayAdapter<String> liste;
+    int ii;
 
     public static String getWord(String str, char seperator, int no) {
         int eind = 0;
@@ -92,7 +96,7 @@ public class MainKalender extends Activity {
                     String line;
                     String data;
 
-                    int ii = 0;
+                    ii = 0;
 
                     //Leser av teskstfilen, og putter data inn i array, og sorteres etter LK, og deretter informasjon om personern, eks.navn,tlf...
                     while ((line = r.readLine()) != null) {
@@ -101,11 +105,16 @@ public class MainKalender extends Activity {
                         Integer words = 7; //Hvor mangen kolonner den skal lese inn
 
                         for (int i = 0; i < words; i++) {
+
                             kalender_data[ii][i] = convertHexToString(getWord(data, '*', i));
                         }
                         ii++;
 
                     }
+
+
+
+            Log.d("et tall:" , lengden_kalender + "");
                     fis.close();
 
 
@@ -151,19 +160,21 @@ public class MainKalender extends Activity {
 
 
 
-                ArrayAdapter<CharSequence> liste = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_list_item_1);
+
                 adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
                 pos_liste = new ArrayList<Integer>();
+                kalenderNavn = new String[ii];
 
-                for (int i = 0; i < lengden_kalender; i++) {
-                    String tmp_overskrift = kalender_data[i][6];
-                    if (tmp_overskrift == null) {
-                    } else {
-                        liste.add(tmp_overskrift);
-                        pos_liste.add(i);
-                    }
+                int index = 0;
+                for (int i = 0; i < ii; i++) {
+                    kalenderNavn[index++] = (kalender_data[i][6]);
+                }
+                if (kalenderNavn == null) {
+                    Toast.makeText(this, "Ingen arrangementer er lagt inn i Portalen", Toast.LENGTH_SHORT).show();
+
                 }
 
+                liste = new CustomArrayAdapterKalender(this, kalenderNavn);
                 kalender_list.setAdapter(liste);
 
                 /*
@@ -213,11 +224,19 @@ public class MainKalender extends Activity {
 
                         kalender_active = 1;
 
-                        position = pos_liste.get(position);
+                        Intent i = new Intent(MainKalender.this, MainKalendarEvent.class);
 
-                        String dato = kalender_data[position][1] + " - " + kalender_data[position][2];
+                        i.putExtra("fraDato", kalender_data[position][1]);
+                        i.putExtra("tilDato", kalender_data[position][2]);
+                        i.putExtra("eventNavn", kalender_data[position][6]);
+                        i.putExtra("eventSted", kalender_data[position][5]);
+                        i.putExtra("eventInfo", kalender_data[position][4]);
+                        startActivity(i);
 
-                        popup_window(kalender_data[position][6], kalender_data[position][5], dato, kalender_data[position][4]);
+
+                        //String dato = kalender_data[position][1] + " - " + kalender_data[position][2];
+
+                        //popup_window(kalender_data[position][6], kalender_data[position][5], dato, kalender_data[position][4]);
 
                     }
 
@@ -226,57 +245,7 @@ public class MainKalender extends Activity {
     }
 
 
-    public void popup_window(String overskrift, String sted, String dato, String info) {
 
-
-        final Dialog dialog = new Dialog(MainKalender.this);
-        dialog.show();
-        dialog.setContentView(R.layout.popup_event);
-        //dialog.setTitle(overskrift);
-        dialog.setCancelable(true);
-
-
-        //LayoutInflater inflater = (LayoutInflater) MainKalender.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        //final View layout = inflater.inflate(R.layout.popup_event, (ViewGroup) findViewById(R.id.popup_event));
-        //pw = new PopupWindow(layout, 300, 550, true);
-        TextView popup_overskrift = (TextView) dialog.findViewById(R.id.text_popup_event_overskrift);
-        TextView popup_dato = (TextView) dialog.findViewById(R.id.text_popup_event_dato);
-        TextView popup_sted = (TextView) dialog.findViewById(R.id.text_popup_event_sted);
-        TextView popup_info = (TextView) dialog.findViewById(R.id.text_popup_evet_info);
-
-        final Button lagre = (Button) dialog.findViewById(R.id.button_popup_event_lagre);
-        final Button lukk = (Button) dialog.findViewById(R.id.button_popup_event_tilbake);
-
-        popup_overskrift.setTypeface(iaesteFontBold);
-        popup_dato.setTypeface(iaesteFont);
-        popup_sted.setTypeface(iaesteFont);
-        popup_info.setTypeface(iaesteFont);
-        lagre.setTypeface(iaesteFont);
-        lukk.setTypeface(iaesteFont);
-
-        popup_overskrift.setText(overskrift);
-        popup_dato.setText(getString(R.string.kalender_01) + " " + sted);
-        popup_sted.setText(getString(R.string.kalender_02) + " " + dato);
-        popup_info.setText(info);
-
-        lagre.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View vv) {
-
-
-            }
-
-
-        });
-
-        lukk.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View vv) {
-                // Lukker popup
-                dialog.cancel();
-            }
-
-        });
-
-    }
 
     @Override
     public void onBackPressed() {
@@ -284,49 +253,11 @@ public class MainKalender extends Activity {
         Sjekk hvis du er inne i "VALG LK"  hvis den er det returnere den til main_home
         eller "MEDLEMLISTER" hvis den er det returnere tilbake til "VALG LK", lk_list()
          */
-        if (kalender_active == 0) {
-            Intent intent = new Intent(MainKalender.this, MainHomeNav.class);       //Går tilbake til MainHomeNav
-            startActivity(intent);
-            finish();
-        } else if (kalender_active == 1) {
+        Intent intent = new Intent(MainKalender.this, MainHomeNav.class);       //Går tilbake til MainHomeNav
+        startActivity(intent);
+        finish();
 
-            final SharedPreferences spinner_memory = getSharedPreferences("Innstillinger", MODE_PRIVATE);
-            SharedPreferences.Editor inn = spinner_memory.edit();
-            inn.putInt("pos", spinner_pos);
-            inn.commit();
 
-            finish();
-            Intent RESET = new Intent(MainKalender.this, MainKalender.class);
-            //startActivity(RESET);
-            kalender_active = 0;
-
-        }
-        return;
     }
-
-
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-
-
-
-            case android.R.id.home:
-                // This is called when the Home (Up) button is pressed
-                // in the Action Bar.
-               /* Intent parentActivityIntent = new Intent(this, MainHome.class);
-                parentActivityIntent.addFlags(
-                        Intent.FLAG_ACTIVITY_CLEAR_TOP |
-                                Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(parentActivityIntent);
-                finish();*/
-                onBackPressed();
-                return true;
-
-
-            default:
-                return false;
-
-        }}
-
 
 }

@@ -69,7 +69,9 @@ public class MainHomeNav extends ActionBarActivity
     SharedPreferences app_preferences;
 
     String name = "", pass = "";
-    String realName, username;
+    String realName, username, localComm, picLink;
+    String[] userInfo;
+
     HttpPost httppost;
     HttpResponse response;
     HttpClient httpclient;
@@ -89,6 +91,13 @@ public class MainHomeNav extends ActionBarActivity
         app_preferences = PreferenceManager.getDefaultSharedPreferences(this);
         realName = app_preferences.getString("name", "0");
         username = app_preferences.getString("username", "0");
+        localComm = app_preferences.getString("idiaeste", "0");
+        picLink = app_preferences.getString("picture", "0");
+        Log.d(localComm, "IAESTE LK");
+        Log.d(realName, "IAESTE NAME");
+        Log.d(picLink, "IAESTE bilde");
+
+
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getFragmentManager().findFragmentById(R.id.fragment_drawer);
@@ -101,7 +110,8 @@ public class MainHomeNav extends ActionBarActivity
         // Set up the drawer.
         mNavigationDrawerFragment.setup(R.id.fragment_drawer, (DrawerLayout) findViewById(R.id.drawer), mToolbar);
 
-        mNavigationDrawerFragment.setUserData(realName, username , BitmapFactory.decodeResource(getResources(), R.drawable.avatar));
+        mNavigationDrawerFragment.setUserData(realName, username, localComm, picLink);
+
 
 
 
@@ -231,12 +241,8 @@ public class MainHomeNav extends ActionBarActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+                       refresh();
 
-        //refresh
-        if (id == R.id.action_settings) {
-                refresh();
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -252,9 +258,12 @@ public class MainHomeNav extends ActionBarActivity
     };
 
 
+
     public String toHex(String arg) {
         return String.format("%x", new BigInteger(1, arg.getBytes(/*YOUR_CHARSET?*/)));
     }
+
+
 
     //Logout, set all the variables null, so the user can access in the app
 
@@ -278,6 +287,7 @@ public class MainHomeNav extends ActionBarActivity
         ConnectionDetector cd = new ConnectionDetector(getApplicationContext());
         Boolean isInternetPresent = cd.isConnectingToInternet(); // true or false
 
+
         if (!isInternetPresent) {
             Toast.makeText(getApplicationContext(), R.string.errorcode_03, Toast.LENGTH_LONG).show();
 
@@ -288,6 +298,7 @@ public class MainHomeNav extends ActionBarActivity
             Thread thr = new Thread(this);
             thr.start();
             Log.d("Refreshed ", "Refreshing Number");
+
         }
     }
 
@@ -300,6 +311,7 @@ public class MainHomeNav extends ActionBarActivity
         String Str_user = app_preferences.getString("username", "0");
         String Str_pass = app_preferences.getString("password", "0");
 
+
         if (!app_preferences.getBoolean("auth", false)) {
             logout();
         }
@@ -308,6 +320,7 @@ public class MainHomeNav extends ActionBarActivity
             name = toHex(Str_user);   //Convert to HEX
             pass = Str_pass;
             httppost = new HttpPost(getString(R.string.url_check_member) + "?det1=" + name + "&det2=" + pass);
+            Log.d(name, pass);
             // Add your data
             nameValuePairs = new ArrayList<NameValuePair>(2);
             nameValuePairs.add(new BasicNameValuePair("UserEmail", name.trim()));
@@ -315,15 +328,25 @@ public class MainHomeNav extends ActionBarActivity
             httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
             ResponseHandler<String> responseHandler = new BasicResponseHandler();
             tekst_php = httpclient.execute(httppost, responseHandler);
-            System.out.println("Response : " + response);
+            System.out.println("Response : " + tekst_php);
 
+           /* userInfo = tekst_php.split("(\\*)");
+
+            SharedPreferences.Editor editor = app_preferences.edit();
+            editor.putString("navn", userInfo[0]);
+            editor.putString("idiaeste", userInfo[1]);
+            editor.putString("picture", userInfo[2]);
+            editor.apply();*/
+
+            System.out.println("VLOSED");
             inputStream.close();
         } catch (Exception e) {
             //Toast.makeText(testLogin.this, "error" + e.toString(), Toast.LENGTH_SHORT).show();
         }
 
         String error = "error"; //Return val
-        //setTitle(R.string.login_title);
+        Log.d("ERROR IN PHP", "");
+
 
         //If the user doesn't exist, set the variables to null, one attempt to use the app again.
         if (tekst_php.matches(error)) {
@@ -375,6 +398,29 @@ public class MainHomeNav extends ActionBarActivity
 
         handler.sendEmptyMessage(0); // close progressbar
 
+    }
+    public String convertHexToString(String hex) {
+
+        StringBuilder sb = new StringBuilder();
+        StringBuilder temp = new StringBuilder();
+
+        //49204c6f7665204a617661 split into two characters 49, 20, 4c...
+
+        int hex_len = hex.length();
+
+        for (int i = 0; i < hex_len - 1; i += 2) {
+
+            //grab the hex in pairs
+            String output = hex.substring(i, (i + 2));
+            //convert hex to decimal
+            int decimal = Integer.parseInt(output, 16);
+            //convert the decimal to character
+            sb.append((char) decimal);
+
+            temp.append(decimal);
+        }
+
+        return sb.toString();
     }
 
 

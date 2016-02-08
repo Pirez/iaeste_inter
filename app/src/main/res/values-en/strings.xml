@@ -186,7 +186,7 @@
         <item>http://iaeste.no/playground/android_app_0001/update_0_9_4_2.d</item>
     </string-array>
 
-    <string name="url_check_member">http://iaeste.no/playground/android_app/portal/check_member</string>
+    <string name="url_check_member">http://iaeste.no/playground/android_app/portal/check_member_2</string>
     <string name="url_pictures_member">https://www.iaeste.no/portal/files/casual/intern/profiles/</string>
 
 </resources>

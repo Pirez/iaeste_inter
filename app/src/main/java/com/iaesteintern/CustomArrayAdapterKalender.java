@@ -11,7 +11,7 @@ import android.widget.TextView;
 /**
  * Created by Edvard on 05.08.2015.
  */
-public class CustomArrayAdapterKalender extends ArrayAdapter<CharSequence> {
+public class CustomArrayAdapterKalender extends ArrayAdapter<String> {
     private final Context context;
     private final String[] values;
     private String[][][] medlem_data = new String[7][5][70];
@@ -28,7 +28,7 @@ public class CustomArrayAdapterKalender extends ArrayAdapter<CharSequence> {
 
 
     public CustomArrayAdapterKalender(Context context, String[] values) {
-        super(context, android.R.layout.simple_spinner_item, values);
+        super(context, R.layout.list_kalender, values);
         this.context = context;
         this.values = values;
         this.iaesteFont = Typeface.createFromAsset(context.getAssets(), "fonts/iaesteFont.ttf");
