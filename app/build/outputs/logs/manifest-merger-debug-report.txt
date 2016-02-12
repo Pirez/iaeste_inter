@@ -67,18 +67,18 @@ ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\sr
 		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:22:9-33
 	android:name
 		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:21:9-50
-android:uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:24:5-89
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:24:5-81
 	android:name
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:24:30-86
-android:uses-permission#android.permission.READ_PHONE_STATE
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:25:5-83
+		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:24:22-78
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:25:5-75
 	android:name
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:25:30-80
-android:uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:26:5-88
+		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:25:22-72
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:26:5-80
 	android:name
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:26:30-85
+		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:26:22-77
 application
 ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:28:5-66:19
 MERGED from [com.android.support:support-v4:22.2.0] C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:22:5-20
