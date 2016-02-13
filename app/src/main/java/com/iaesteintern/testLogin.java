@@ -119,7 +119,7 @@ public class testLogin extends Activity implements Runnable {
         // Update the action bar title with the TypefaceSpan instance
         //ActionBar actionBar = getActionBar();
         //actionBar.setTitle(s);
-        setBackgroundImage();
+        //setBackgroundImage();
 
         hasUserOpenedBefore();
         if (Bol_auth) {
@@ -247,7 +247,7 @@ public class testLogin extends Activity implements Runnable {
     /**
      * Kan brukes for dynamiske bilder i login screen
      * **/
-public void setBackgroundImage() {
+/*public void setBackgroundImage() {
 ImageView layBg = (ImageView) findViewById(R.id.login_bg);
         Picasso.with(this)
                 .load(R.drawable.login_bg)
@@ -255,7 +255,7 @@ ImageView layBg = (ImageView) findViewById(R.id.login_bg);
                 .fit()
                 .into(layBg);
 
-    }
+    }*/
     public void user_pass_window() {
 
         password.setVisibility(View.VISIBLE);

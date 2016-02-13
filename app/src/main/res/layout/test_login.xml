@@ -3,11 +3,16 @@
     android:layout_height="fill_parent"
     android:fadingEdge="horizontal"
     android:fitsSystemWindows="true"
-    android:id="@+id/login_layout">
-<ImageView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/login_bg"/>
+    android:id="@+id/login_layout"
+    android:background="@drawable/login_bg"
+    >
+<!-- <ImageView
+    android:layout_marginTop="-24dp"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/login_bg"
+    android:fitsSystemWindows="true"
+    android:fadingEdge="horizontal"/> -->
 
     <RelativeLayout
         android:id="@+id/view"
