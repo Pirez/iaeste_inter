@@ -22,6 +22,7 @@ import android.text.SpannableString;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 import android.widget.ScrollView;
@@ -80,6 +81,7 @@ public class MainHomeNav extends ActionBarActivity
 
     ScrollView nyhetsScroll;
     SwipeRefreshLayout swipeLayout;
+    boolean updatingFromServer;
 
 
     @Override
@@ -112,7 +114,7 @@ public class MainHomeNav extends ActionBarActivity
 
         mNavigationDrawerFragment.setUserData(realName, username, localComm, picLink);
 
-
+        mNavigationDrawerFragment.closeDrawer();
 
 
 
@@ -217,9 +219,12 @@ public class MainHomeNav extends ActionBarActivity
     public void onBackPressed() {
         if (mNavigationDrawerFragment.isDrawerOpen())
             mNavigationDrawerFragment.closeDrawer();
-        else
+        else {
             super.onBackPressed();
+        }
+
     }
+
 
 
     @Override
@@ -241,7 +246,12 @@ public class MainHomeNav extends ActionBarActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-                       refresh();
+        switch(id){
+            case R.id.action_update:
+                refresh();
+                break;
+        }
+
 
 
         return super.onOptionsItemSelected(item);
@@ -254,6 +264,9 @@ public class MainHomeNav extends ActionBarActivity
     private Handler handler = new Handler() {
         public void handleMessage(Message msg) {
             progressDialog.dismiss();
+            finish();
+            overridePendingTransition(R.transition.fadein, R.transition.fadeout);
+            startActivity(getIntent());
         }
     };
 
@@ -278,6 +291,7 @@ public class MainHomeNav extends ActionBarActivity
         Intent ut = new Intent(MainHomeNav.this, testLogin.class);
         startActivity(ut);
         finish(); //Gjør at ikke brukeren kan gå tilbake i MainHome, dreper hele activityen
+        overridePendingTransition(R.transition.left_to_right, R.transition.right_to_left);
     }
 
 
@@ -298,9 +312,10 @@ public class MainHomeNav extends ActionBarActivity
             Thread thr = new Thread(this);
             thr.start();
             Log.d("Refreshed ", "Refreshing Number");
-
-        }
+            updatingFromServer = true;
+                   }
     }
+
 
     public void run() {
 
@@ -314,6 +329,9 @@ public class MainHomeNav extends ActionBarActivity
 
         if (!app_preferences.getBoolean("auth", false)) {
             logout();
+        }
+        if (updatingFromServer){
+            updatingFromServer = false;
         }
 
         try {

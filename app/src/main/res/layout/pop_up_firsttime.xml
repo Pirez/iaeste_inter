@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="Denne appen bruker IKKE det samme passordet som man vanligvis bruker. For å hente passordet for å logge inn må man først skrive inn mail og deretter trykk på 'HENT PASSORD'."
+        android:id="@+id/textView_forklaring"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_marginTop="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forstått!"
+        android:id="@+id/buttonUnderstood"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>

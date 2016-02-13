@@ -12,7 +12,7 @@
         android:elevation="2dp"
         android:layout_margin="8dp"
         android:padding="16dp"
-        >
+        android:id="@+id/relativeLayout2">
 
 
     <TextView
@@ -54,5 +54,15 @@
             android:layout_below="@id/button_innstillinger_lagre"
             android:visibility="gone"
             />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Om appen"
+            android:id="@+id/buttonOmOss"
+            android:layout_below="@id/button_innstillinger_01"
+            android:layout_centerHorizontal="true" />
     </RelativeLayout>
+
+
 </RelativeLayout>

@@ -167,7 +167,7 @@ public class MainPerson extends Activity {
         final Dialog dialog = new Dialog(MainPerson.this);
         dialog.show();
         dialog.setContentView(R.layout.popup_confirm_contact);
-        //dialog.setTitle(popup_navn);
+        dialog.setTitle(pop_name);
         dialog.setCancelable(true);
 
         TextView text = (TextView) dialog.findViewById(R.id.dialog_textView);

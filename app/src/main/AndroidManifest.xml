@@ -29,7 +29,8 @@
         android:icon="@drawable/icon"
         android:label="IAESTE"
         android:theme="@style/Theme.2016">
-        <activity android:name=".testLogin">
+        <activity android:name=".testLogin"
+            android:theme="@style/Theme.2016.NoStatusBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -62,7 +63,7 @@
         <activity
             android:name=".MainPerson"
             android:label="@string/title_activity_main__person" />
-        <activity android:name=".MainKalendarEvent"></activity>
+        <activity android:name=".MainKalendarEvent"/>
     </application>
 
 </manifest>

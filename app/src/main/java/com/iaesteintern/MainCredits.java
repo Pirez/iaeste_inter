@@ -2,11 +2,13 @@ package com.iaesteintern;
 //package com.android.HelloWorld;
 //TODO: Fikse hele denne screen (men er ikkje kritisk!)
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.Spannable;
@@ -14,6 +16,7 @@ import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -22,6 +25,7 @@ import org.w3c.dom.Text;
 public class MainCredits extends Activity {
     Typeface iaesteFont;
     Typeface iaesteFontBold;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +40,6 @@ public class MainCredits extends Activity {
         TextView devs = (TextView) findViewById(R.id.text_credits_programmere);
         TextView johan = (TextView) findViewById(R.id.text_credits_johan);
         TextView mailjohan = (TextView) findViewById(R.id.text_credits_mailjohan);
-        TextView design = (TextView) findViewById(R.id.text_credits_design);
         TextView edvard = (TextView) findViewById(R.id.text_credits_edvard);
         TextView mailedvard = (TextView) findViewById(R.id.text_credits_mailedvard);
         TextView kontakt = (TextView) findViewById(R.id.text_credits_kontakt);
@@ -47,16 +50,22 @@ public class MainCredits extends Activity {
         devs.setTypeface(iaesteFontBold);
         johan.setTypeface(iaesteFont);
         mailjohan.setTypeface(iaesteFont);
-        design.setTypeface(iaesteFontBold);
         edvard.setTypeface(iaesteFont);
         mailedvard.setTypeface(iaesteFont);
         kontakt.setTypeface(iaesteFont);
         back_home.setTypeface(iaesteFont);
 
 
-        SpannableString s = new SpannableString("Om IAESTE appen");
+        SpannableString s = new SpannableString("Innstillinger");
         s.setSpan(new TypefaceSpan(this, "iaesteFontBold.ttf"), 0, s.length(),
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ActionBar actionBar = getActionBar();
+        actionBar.setTitle(s);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            getWindow().setStatusBarColor(getResources().getColor(R.color.secondary));
+        }
 
 
         /*mTextSample.setMovementMethod(LinkMovementMethod.getInstance());
@@ -92,23 +101,29 @@ public class MainCredits extends Activity {
         switch (item.getItemId()) {
 
 
-
             case android.R.id.home:
-                // This is called when the Home (Up) button is pressed
-                // in the Action Bar.
-                Intent parentActivityIntent = new Intent(this, MainHome.class);
-                parentActivityIntent.addFlags(
-                        Intent.FLAG_ACTIVITY_CLEAR_TOP |
-                                Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(parentActivityIntent);
-                finish();
+                onBackPressed();
                 return true;
 
 
             default:
                 return false;
 
-        }}
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        /*
+        Sjekk hvis du er inne i "VALG LK"  hvis den er det returnere den til main_home
+        eller "MEDLEMLISTER" hvis den er det returnere tilbake til "VALG LK", lk_list()
+         */
+        Intent intent = new Intent(MainCredits.this, MainInnstillinger.class);       //Går tilbake til MainHomeNav
+        startActivity(intent);
+        finish();
+
+
+    }
 
 
 }

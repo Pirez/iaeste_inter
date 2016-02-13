@@ -2,6 +2,7 @@ package com.iaesteintern;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -15,6 +16,9 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.*;
+
+import com.squareup.picasso.Picasso;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
@@ -50,6 +54,11 @@ public class testLogin extends Activity implements Runnable {
     ProgressDialog progressDialog;
     String userInfo;
     String[] userInfoArray;
+    boolean firstTimeOpen;
+    TextView activityTitle;
+
+    Typeface iaesteFont;
+    Typeface iaesteFontBold;
 
 
     public void onCreate(Bundle savedInstanceState) {
@@ -62,12 +71,13 @@ public class testLogin extends Activity implements Runnable {
 
         app_preferences = PreferenceManager.getDefaultSharedPreferences(this);
 
-        appText = (TextView) findViewById(R.id.text);
+        //appText = (TextView) findViewById(R.id.text);
         username = (EditText) findViewById(com.iaesteintern.R.id.username);
         password = (EditText) findViewById(R.id.password);
         glemt_passord = (Button) findViewById(R.id.glemt_passord);
         back_passord = (Button) findViewById(R.id.back_passord);
         glemsk_passord = (Button) findViewById(R.id.glemsk_passord);
+        activityTitle = (TextView) findViewById(R.id.iaesteoverskrift);
 
         login = (Button) findViewById(R.id.login);
         check = (CheckBox) findViewById(R.id.check);
@@ -78,12 +88,14 @@ public class testLogin extends Activity implements Runnable {
         String Str_check = app_preferences.getString("checked", "no");
         Boolean Bol_auth = app_preferences.getBoolean("auth", false);
 
+        firstTimeOpen = app_preferences.getBoolean("firstTime", true);
+
 
         //Definerer selve fonten og setter font på der de skal være
-        Typeface iaesteFont = Typeface.createFromAsset(getAssets(), "fonts/iaesteFont.ttf");
-        Typeface iaesteFontBold = Typeface.createFromAsset(getAssets(), "fonts/iaesteFontBold.ttf");
+        iaesteFont = Typeface.createFromAsset(getAssets(), "fonts/iaesteFont.ttf");
+        iaesteFontBold = Typeface.createFromAsset(getAssets(), "fonts/iaesteFontBold.ttf");
 
-        appText.setTypeface(iaesteFontBold);
+        //appText.setTypeface(iaesteFontBold);
         username.setTypeface(iaesteFont);
         password.setTypeface(iaesteFont);
         glemt_passord.setTypeface(iaesteFont);
@@ -92,11 +104,12 @@ public class testLogin extends Activity implements Runnable {
         login.setTypeface(iaesteFont);
         check.setTypeface(iaesteFont);
         link.setTypeface(iaesteFont);
+        activityTitle.setTypeface(iaesteFont);
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            getWindow().setStatusBarColor(getResources().getColor(R.color.secondary));
+            getWindow().setStatusBarColor(getResources().getColor(R.color.transparent));
         }
 
         SpannableString s = new SpannableString("IAESTE Norge");
@@ -104,11 +117,11 @@ public class testLogin extends Activity implements Runnable {
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         // Update the action bar title with the TypefaceSpan instance
-        ActionBar actionBar = getActionBar();
-        actionBar.setTitle(s);
+        //ActionBar actionBar = getActionBar();
+        //actionBar.setTitle(s);
+        setBackgroundImage();
 
-
-
+        hasUserOpenedBefore();
         if (Bol_auth) {
             Move_to_next_check();
         }
@@ -134,6 +147,9 @@ public class testLogin extends Activity implements Runnable {
                 }
                 if (name.equals("") || pass.equals("")) {
                     Toast.makeText(testLogin.this, R.string.login_11, Toast.LENGTH_LONG).show();
+                } else if (!pass.matches(".*\\d+.*")) {
+                    Toast.makeText(testLogin.this, R.string.login_26, Toast.LENGTH_LONG).show();
+
                 } else {
 
                     ConnectionDetector cd = new ConnectionDetector(getApplicationContext());
@@ -221,14 +237,25 @@ public class testLogin extends Activity implements Runnable {
     }
 
     public void Move_to_next_check() {
-
+        overridePendingTransition(R.transition.right_to_left, R.transition.left_to_right);
         Intent intent = new Intent(testLogin.this, MainHomeNav.class);
         startActivity(intent);
         finish();
 
     }
 
+    /**
+     * Kan brukes for dynamiske bilder i login screen
+     * **/
+public void setBackgroundImage() {
+ImageView layBg = (ImageView) findViewById(R.id.login_bg);
+        Picasso.with(this)
+                .load(R.drawable.login_bg)
+                .error(R.drawable.login_bg)
+                .fit()
+                .into(layBg);
 
+    }
     public void user_pass_window() {
 
         password.setVisibility(View.VISIBLE);
@@ -248,6 +275,36 @@ public class testLogin extends Activity implements Runnable {
         glemsk_passord.setVisibility(View.VISIBLE);
     }
 
+    private void hasUserOpenedBefore() {
+
+        if (firstTimeOpen) {
+            popup_firstTime();
+            SharedPreferences.Editor editor = app_preferences.edit();
+            editor.putBoolean("firstTime", false);
+            editor.apply();
+
+        }
+    }
+
+    public void popup_firstTime() {
+        final Dialog dialog = new Dialog(this);
+        dialog.show();
+        dialog.setContentView(R.layout.pop_up_firsttime);
+        dialog.setTitle("Hente passord");
+        dialog.setCancelable(true);
+        Button btnUnderstood = (Button) dialog.findViewById(R.id.buttonUnderstood);
+        TextView textInnhold = (TextView) dialog.findViewById(R.id.textView_forklaring);
+        btnUnderstood.setTypeface(iaesteFontBold);
+        textInnhold.setTypeface(iaesteFont);
+        btnUnderstood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+
+    }
 
     private class StartCheckAsyncTask extends AsyncTask<Void, Void, String> {
         private ProgressDialog dialog;
@@ -295,39 +352,39 @@ public class testLogin extends Activity implements Runnable {
                 editor.putBoolean("auth", false);
                 editor.commit();
             } else {
-                Toast.makeText(testLogin.this, "Velkommen " + message, Toast.LENGTH_LONG).show();
-
                 SharedPreferences.Editor editor = app_preferences.edit();
                 editor.putString("phpOutput", message);
-               String hexUserInfo = message;
+                String hexUserInfo = message;
                 Log.d("array:", hexUserInfo);
 
                 //convertHexToString(hexUserInfo);
+                if (!hexUserInfo.contains("error")) {
+                    Toast.makeText(testLogin.this, "Velkommen!", Toast.LENGTH_LONG).show();
+                    userInfoArray = hexUserInfo.split("\\*");
 
-                userInfoArray = hexUserInfo.split("\\*");
+                    editor.putString("name", convertHexToString(userInfoArray[0]));
+                    editor.putString("idiaeste", convertHexToString(userInfoArray[1]));
+                    editor.putString("picture", convertHexToString(userInfoArray[2]));
+                    editor.putBoolean("auth", true);
+                    editor.apply();
+                    //Go too next screen
+                    Move_to_next();
+                } else {
 
-                editor.putString("name", convertHexToString(userInfoArray[0]));
-                editor.putString("idiaeste", convertHexToString(userInfoArray[1]));
-                editor.putString("picture", convertHexToString(userInfoArray[2]));
-                editor.putBoolean("auth", true);
-                editor.apply();
-                //Go too next screen
-                Move_to_next(); //Går inn
+                    Toast.makeText(testLogin.this, "Passordet eller mailen din stemmer ikke!", Toast.LENGTH_LONG).show();
+                } //Går inn
             }
             dialog.dismiss();
-            if (message != null) {
+            /*if (message != null) {
                 // process the error (show alert etc)
-                //Log.e("StartPaymentAsyncTask", String.format("I received an error: %s", message));
             } else {
                 //Log.i("StartPaymentAsyncTask", "No problems");
-            }
+            }*/
         }
     }
 
 
-
     public String startCheck() throws Exception {
-
 
 
         String tekst_php = "";
@@ -418,7 +475,7 @@ public class testLogin extends Activity implements Runnable {
 
             httpclient = new DefaultHttpClient();
             mail = toHex(mail);   //Convert to HEX
-            Log.d("forgot password",mail);
+            Log.d("forgot password", mail);
             httppost = new HttpPost("http://iaeste.no/playground/android_app/portal/forgot.php?det1=" + mail);
             // Add your data
             nameValuePairs = new ArrayList<NameValuePair>(1);
@@ -530,9 +587,11 @@ public class testLogin extends Activity implements Runnable {
             progressDialog.dismiss();
 
             //After download the update, go to the main screen
+
             Intent intent = new Intent(testLogin.this, MainHomeNav.class);
             startActivity(intent);
             finish();
+            overridePendingTransition(R.transition.left_to_right, R.transition.right_to_left);
         }
     };
 

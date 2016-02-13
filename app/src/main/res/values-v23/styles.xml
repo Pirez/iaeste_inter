@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--
+        <style name="Theme.2016" parent="android:Theme.Material">
+            <item name="android:colorPrimary">@color/primary_material_light</item>
+            <item name="android:colorPrimaryDark">@color/primary_dark_material_light</item>
+            <item name="android:colorAccent">@color/accent_material_light</item>
+            <item name="android:colorBackground">@color/background_material_light</item>
+            <item name="android:windowBackground">@color/background_material_light</item>
+            <item name="android:navigationBarColor">@color/black</item>
+            <item name="android:textColorSecondary">@color/white3</item>
+            <item name="android:textColorSecondaryInverse">@color/white3</item>
+            <item name="android:textColorPrimary">@color/white3</item>
+            <item name="android:textColorPrimaryInverse">@color/white3</item>
+        </style>
 
-    <style name="Theme.2016" parent="android:Theme.Material">
-        <item name="android:colorPrimary">@color/primary_material_light</item>
-        <item name="android:colorPrimaryDark">@color/primary_dark_material_light</item>
-        <item name="android:colorAccent">@color/accent_material_light</item>
-        <item name="android:colorBackground">@color/background_material_light</item>
-        <item name="android:windowBackground">@color/background_material_light</item>
-        <item name="android:navigationBarColor">@color/black</item>
-        <item name="android:textColorSecondary">@color/white3</item>
-        <item name="android:textColorSecondaryInverse">@color/white3</item>
-        <item name="android:textColorPrimary">@color/white3</item>
-        <item name="android:textColorPrimaryInverse">@color/white3</item>
-    </style>
-
+        <!- - REMEMBER to remove everything involving the actionbar in the activity code if this is used--><!--
     <style name="Theme.2016.NoActionBar" parent="Theme.AppCompat" >
         <item name="android:colorPrimary">@color/primary_material_light</item>
         <item name="android:colorPrimaryDark">@color/primary_dark_material_light</item>
@@ -28,5 +29,8 @@
         <item name="android:textColorSecondaryInverse">@color/white3</item>
         <item name="android:textColorPrimary">@color/white3</item>
         <item name="android:textColorPrimaryInverse">@color/white3</item>
-    </style>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentTransitions">true</item>
+    </style>-->
 </resources>

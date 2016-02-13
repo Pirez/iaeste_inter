@@ -8,11 +8,15 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.*;
 
 import java.util.Locale;
@@ -23,6 +27,7 @@ public class MainInnstillinger extends Activity {
     Typeface iaesteFont;
     Typeface iaesteFontBold;
     TextView textMalform;
+    Button omAppen;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,11 +38,16 @@ public class MainInnstillinger extends Activity {
         iaesteFont = Typeface.createFromAsset(getAssets(), "fonts/iaesteFont.ttf");
         iaesteFont = Typeface.createFromAsset(getAssets(), "fonts/iaesteFont.ttf");
 
+        omAppen = (Button) findViewById(R.id.buttonOmOss);
+
 
         final CheckBox autoBilde = (CheckBox) findViewById(R.id.check_innstilinger_autoBildehusk);
         iaesteFont = Typeface.createFromAsset(getAssets(), "fonts/iaesteFont.ttf");
 
         iaesteFont = Typeface.createFromAsset(getAssets(), "fonts/iaesteFont.ttf");
+        autoBilde.setTypeface(iaesteFont);
+        omAppen.setTypeface(iaesteFont);
+        lagre.setTypeface(iaesteFont );
 
         final SharedPreferences innstillinger = getSharedPreferences("Innstillinger", MODE_PRIVATE);
         SharedPreferences.Editor inn = innstillinger.edit();
@@ -56,8 +66,13 @@ public class MainInnstillinger extends Activity {
         ActionBar actionBar = getActionBar();
         actionBar.setTitle(s);
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            getWindow().setStatusBarColor(getResources().getColor(R.color.secondary));
+        }
+
         textMalform = (TextView) findViewById(R.id.text_innstillinger_malform);
-        textMalform.setTypeface(iaesteFont);
+        textMalform.setTypeface(iaesteFontBold);
         Spinner valg_malform = (Spinner) findViewById(R.id.spinner_innstilliner_målform);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this, R.array.malform, android.R.layout.simple_spinner_item);
@@ -99,6 +114,15 @@ public class MainInnstillinger extends Activity {
         valg_malform.setOnItemSelectedListener(new MyOnItemSelectedListener());
 
 
+        omAppen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainInnstillinger.this, MainCredits.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         lagre.setOnClickListener(new View.OnClickListener() {
             public void onClick(View a) {
 
@@ -120,14 +144,38 @@ public class MainInnstillinger extends Activity {
 
                 Toast.makeText(getApplicationContext(), R.string.instilinnger_05,
                         Toast.LENGTH_SHORT).show();
-                //Intent in = new Intent(MainInnstillinger.this, MainHome.class);
-                //startActivity(in);
+                Intent in = new Intent(MainInnstillinger.this, MainHomeNav.class);
+                startActivity(in);
                 finish();
             }
         });
 
 
 
+
+    }
+
+
+
+
+    @Override
+    public boolean onOptionsItemSelected
+            (MenuItem
+                     item) {
+        switch (item.getItemId()) {
+
+            case android.R.id.home:
+                // This is called when the Home (Up) button is pressed
+                // in the Action Bar.
+                onBackPressed();
+                return true;
+
+
+
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
 
     }
 

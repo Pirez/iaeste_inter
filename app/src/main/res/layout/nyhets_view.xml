@@ -50,23 +50,28 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
             android:id="@+id/main_nyhet_overskrift"
+            android:textIsSelectable="true"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New Text"
-            android:id="@+id/main_nyhet_created" />
+            android:id="@+id/main_nyhet_created"
+            android:textIsSelectable="true"
+            />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New Text"
-            android:id="@+id/main_nyhet_innhold" />
+            android:id="@+id/main_nyhet_innhold"
+            android:textIsSelectable="true"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New Text"
-            android:id="@+id/main_nyhet_navn" />
+            android:id="@+id/main_nyhet_navn"
+            android:textIsSelectable="true"/>
 
     </LinearLayout>
 

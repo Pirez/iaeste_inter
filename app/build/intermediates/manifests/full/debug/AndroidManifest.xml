@@ -29,7 +29,9 @@
         android:icon="@drawable/icon"
         android:label="IAESTE"
         android:theme="@style/Theme.2016" >
-        <activity android:name="com.iaesteintern.testLogin" >
+        <activity
+            android:name="com.iaesteintern.testLogin"
+            android:theme="@style/Theme.2016.NoStatusBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

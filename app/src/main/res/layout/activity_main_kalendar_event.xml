@@ -3,53 +3,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-android:layout_margin="8dp"
-    android:padding="16dp"
-    tools:context="com.iaesteintern.MainKalendarEvent"
+    android:layout_margin="8dp"
     android:background="@drawable/shape"
-    android:elevation="2dp">
+    android:elevation="2dp"
+    android:padding="16dp"
+    tools:context="com.iaesteintern.MainKalendarEvent">
 
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="eventName"
         android:id="@+id/event_name"
-        android:textSize="28sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:text="eventName"
+        android:textSize="28sp" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="eventsted"
         android:id="@+id/event_sted"
-        android:layout_below="@+id/event_name"
-        android:layout_centerHorizontal="true" />
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="190dp"
-    android:layout_alignParentEnd="true"
-    android:layout_above="@+id/calendarView"
-    android:layout_below="@+id/event_sted">
-    <TextView
-        android:layout_marginTop="32dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="eventInfo"
-        android:id="@+id/event_info"
- />
+        android:layout_below="@+id/event_name"
+        android:layout_centerHorizontal="true"
+        android:text="eventsted" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_above="@+id/calendarView"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/event_sted">
+
+        <TextView
+            android:id="@+id/event_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="eventInfo" />
 
 
-</ScrollView>
+    </ScrollView>
 
     <CalendarView
+        android:id="@+id/calendarView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/calendarView"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:background="@drawable/shape_lighter"
+        android:elevation="2dp"
         android:focusedMonthDateColor="@color/primary_material_light"
-        android:showWeekNumber="true"
-        />
+        android:showWeekNumber="true" />
 </RelativeLayout>

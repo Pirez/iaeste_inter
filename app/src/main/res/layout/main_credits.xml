@@ -1,121 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent"
-    android:paddingStart="8dp"
-              >
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@drawable/shape"
+    android:orientation="vertical"
+    android:padding="16dp"
     >
 
 
     <TextView
-            android:textSize="30sp"
-            android:padding="2dp"
-            android:id="@+id/text_credits_tittel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/credits_02"
-            android:textStyle="bold"
-
-            />
-    <TextView
-            android:textSize="18dp"
-            android:id="@+id/text_credits_historie"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/credits_04"
-        android:layout_marginBottom="5dp"
-
-        />
-
-    <TextView
-            android:textSize="24sp"
-            android:id="@+id/text_credits_programmere"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/credits_05"
-        android:layout_marginBottom="5dp"
-
-        />
-
-    <TextView
-            android:textSize="20sp"
-            android:id="@+id/text_credits_johan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/credits_06"
-
-
-            />
-
-    <TextView
-            android:textSize="18sp"
-            android:id="@+id/text_credits_mailjohan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/credits_07"
-            android:autoLink="email"
-        android:layout_marginBottom="5dp"
-
-            />
-
-    <TextView
-        android:textSize="24sp"
-        android:id="@+id/text_credits_design"
+        android:id="@+id/text_credits_tittel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Design:"
-        android:layout_marginBottom="5dp"
+        android:padding="2dp"
+        android:text="@string/credits_02"
+        android:textSize="30sp"
+        android:textStyle="bold"
 
         />
 
     <TextView
+        android:id="@+id/text_credits_historie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="@string/credits_04"
+        android:textSize="18dp"
+
+        />
+
+    <TextView
+        android:id="@+id/text_credits_programmere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="@string/credits_05"
+        android:textSize="24sp"
+
+        />
+
+    <TextView
+        android:id="@+id/text_credits_johan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/credits_06"
         android:textSize="20sp"
+
+
+        />
+
+    <TextView
+        android:id="@+id/text_credits_mailjohan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:autoLink="email"
+        android:text="@string/credits_07"
+        android:textSize="18sp"
+
+        />
+
+
+
+    <TextView
         android:id="@+id/text_credits_edvard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Edvard Pires Bjørgen"
-
+        android:text="Edvard Pires Bjørgen (LK Bergen)"
+        android:textSize="20sp"
 
 
         />
 
     <TextView
-        android:textSize="18sp"
         android:id="@+id/text_credits_mailedvard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="edbjorgen@gmail.com"
-        android:autoLink="email"
         android:layout_marginBottom="10dp"
+        android:autoLink="email"
+        android:text="edbjorgen@gmail.com"
+        android:textSize="18sp"
 
         />
 
     <TextView
-            android:id="@+id/text_credits_kontakt"
-            android:textSize="16sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/credits_08"
+        android:id="@+id/text_credits_kontakt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/credits_08"
+        android:textSize="16sp"
 
-            />
+        />
 
     <TextView
-            android:id="@+id/text_link_credits_bug"
-            android:textSize="16sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            />
+        android:id="@+id/text_link_credits_bug"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="16sp" />
 
 
-    <Button android:id="@+id/button_credits_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/credits_09"
+    <Button
+        android:id="@+id/button_credits_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
 
-        android:layout_gravity="center" />
-
+        android:text="@string/credits_09" />
 
 
 </LinearLayout>

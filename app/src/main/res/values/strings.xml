@@ -41,7 +41,7 @@
     <string name="login_07">Email</string>
     <string name="login_08">Passord</string>
     <string name="login_09">Logg inn</string>
-    <string name="login_10">Glemt Passord</string>
+    <string name="login_10">Hent Passord</string>
     <string name="login_11">Fyll ut alle feltene</string>
     <string name="login_12">Velkommen,</string>
     <string name="login_13">Logger inn.......</string>
@@ -57,16 +57,15 @@
     <string name="login_23">Passord:</string>
     <string name="login_24">Logg ut (Reset)</string>
     <string name="login_25">Logg ut</string>
+    <string name="login_26">Skriv inn riktig passord!</string>
 
 
     <string name="credits_01">Legg inn tips/forbedringer/bugs her:</string>
     <string name="credits_02">Om IAESTE appen</string>
     <string name="credits_03">I utviklingen til appen ble IntelliJ og Android SDK brukt.</string>
-    <string name="credits_04">Vil gjerne nevne Gunnar Raaen (Fysikk ,UiO) som lærte meg java programmering og hjalp meg
-        mye med infrastrukturen, Matias Holte/Hans Martin (LK Oslo/LK Ås) som hjalp meg med å behandle data fra
-        internsidene, tusen takk for all hjelpen!
+    <string name="credits_04">Vil gjerne nevne Gunnar Raaen (Fysikk, UiO) som lærte meg Java-programmering og hjalp meg mye med infrastrukturen, Matias Holte/Hans Martin (Tidligere LK Oslo/LK Oslo) som hjalp meg med å behandle data fra internsidene, tusen takk for all hjelpen! \n- Johan
     </string>
-    <string name="credits_05">Utvikler:</string>
+    <string name="credits_05">Utviklere:</string>
     <string name="credits_06">Johan Pires Bjørgen (LK Oslo)</string>
     <string name="credits_07">jpbjorgen@gmail.com</string>
     <string name="credits_08">Ta kontakt hvis du har tips til forbedringer eller lurer på noe.</string>
@@ -91,10 +90,10 @@
 
 
 
-    <string name="update_info_old">- Mulighet å lagre kontakter \n - Fikset en bug i Android 2.X ver, \n - Lagt inn random bilder fra portalen \nDato:24.02.13
+    <string name="update_info_older">- Mulighet å lagre kontakter \n - Fikset en bug i Android 2.X ver, \n - Lagt inn random bilder fra portalen \nDato:24.02.13
     </string>
-        <string name="update_info"> - Oppdatert design \n- Dato: 06.08.15
-    </string>
+        <string name="update_info_old"> - Oppdatert design \n- Dato: 06.08.15</string>
+    <string name="update_info">- Oppdatert design: \n- Lagt til visning av bilder i    medlemsliste \n- Lagt til kalender \n- Nytt design på innloggingsskjerm \n- mye mer\n- Dato: 06.08.15</string>
     <string name="update_text_02">Oppdatere</string>
 
     <string name="pic_02">Personen har bildet, for å se det aktiver "Auto Bilde" i innstillinger</string>

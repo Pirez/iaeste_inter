@@ -7,4 +7,5 @@
     <color name="white1">#FFFFFF</color>
     <color name="card_gray">#404040</color>
     <color name="card_gray_lighter">#545454</color>
+    <color name="transparent">#03000000</color>
 </resources>

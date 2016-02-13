@@ -1,174 +1,176 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:2:1-68:12
+ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:2:1-69:12
 	xmlns:android
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:2:11-69
 	package
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:4:5-31
-		INJECTED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:4:5-31
+		INJECTED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml
 	android:versionName
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:7:5-32
-		INJECTED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:7:5-32
+		INJECTED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml
 	android:versionCode
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:6:5-29
-		INJECTED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:6:5-29
+		INJECTED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml
 	android:installLocation
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:5:5-35
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:5:5-35
 	android:name
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:3:5-26
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:3:5-26
 uses-sdk
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:9:5-11:41
-MERGED from [com.android.support:support-v4:22.2.0] C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:appcompat-v7:21.0.3] C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\AndroidManifest.xml:15:5-42
-MERGED from [com.android.support:support-v4:22.2.0] C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:21.0.3] C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.3\AndroidManifest.xml:15:5-42
-MERGED from [com.android.support:support-v4:22.2.0] C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:20:5-43
-MERGED from [com.pkmmte.view:circularimageview:1.1] C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.pkmmte.view\circularimageview\1.1\AndroidManifest.xml:7:5-9:41
-MERGED from [com.roomorama:caldroid:2.3.1] C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.roomorama\caldroid\2.3.1\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:support-v4:22.2.0] C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:20:5-43
+ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:9:5-11:41
+MERGED from [com.android.support:support-v4:22.2.0] C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:21.0.3] C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\AndroidManifest.xml:15:5-42
+MERGED from [com.android.support:support-v4:22.2.0] C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:21.0.3] C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.3\AndroidManifest.xml:15:5-42
+MERGED from [com.android.support:support-v4:22.2.0] C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:20:5-43
+MERGED from [com.pkmmte.view:circularimageview:1.1] C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.pkmmte.view\circularimageview\1.1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.roomorama:caldroid:2.3.1] C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.roomorama\caldroid\2.3.1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-v4:22.2.0] C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:20:5-43
 	android:targetSdkVersion
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:11:9-38
-		INJECTED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:11:9-38
+		INJECTED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:10:9-34
-		INJECTED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:10:9-34
+		INJECTED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:13:5-67
+ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:13:5-67
 	android:name
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:13:22-64
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:13:22-64
 uses-permission#android.permission.CALL_PHONE
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:14:5-69
+ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:14:5-69
 	android:name
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:14:22-66
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:14:22-66
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:15:5-79
+ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:15:5-79
 	android:name
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:15:22-76
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:15:22-76
 uses-permission#android.permission.READ_CONTACTS
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:16:5-72
+ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:16:5-72
 	android:name
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:16:22-69
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:16:22-69
 uses-permission#android.permission.WRITE_CONTACTS
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:17:5-73
+ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:17:5-73
 	android:name
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:17:22-70
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:17:22-70
 uses-permission#android.permission.SEND_SMS
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:18:5-67
+ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:18:5-67
 	android:name
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:18:22-64
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:18:22-64
 uses-feature#android.hardware.telephony
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:20:5-22:36
+ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:20:5-22:36
 	android:required
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:22:9-33
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:22:9-33
 	android:name
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:21:9-50
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:21:9-50
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:24:5-81
+ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:24:5-81
 	android:name
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:24:22-78
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:24:22-78
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:25:5-75
+ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:25:5-75
 	android:name
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:25:22-72
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:25:22-72
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:26:5-80
+ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:26:5-80
 	android:name
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:26:22-77
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:26:22-77
 application
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:28:5-66:19
-MERGED from [com.android.support:support-v4:22.2.0] C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:appcompat-v7:21.0.3] C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\AndroidManifest.xml:16:5-19
-MERGED from [com.android.support:support-v4:22.2.0] C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:recyclerview-v7:21.0.3] C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.3\AndroidManifest.xml:17:5-19:19
-MERGED from [com.android.support:support-v4:22.2.0] C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:22:5-20
-MERGED from [com.pkmmte.view:circularimageview:1.1] C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.pkmmte.view\circularimageview\1.1\AndroidManifest.xml:11:5-20
-MERGED from [com.android.support:support-v4:22.2.0] C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:22:5-20
+ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:28:5-67:19
+MERGED from [com.android.support:support-v4:22.2.0] C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:21.0.3] C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\AndroidManifest.xml:16:5-19
+MERGED from [com.android.support:support-v4:22.2.0] C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:recyclerview-v7:21.0.3] C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.3\AndroidManifest.xml:17:5-19:19
+MERGED from [com.android.support:support-v4:22.2.0] C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:22:5-20
+MERGED from [com.pkmmte.view:circularimageview:1.1] C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.pkmmte.view\circularimageview\1.1\AndroidManifest.xml:11:5-20
+MERGED from [com.android.support:support-v4:22.2.0] C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:22:5-20
 	android:label
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:30:9-31
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:30:9-31
 	android:icon
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:29:9-38
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:29:9-38
 	android:theme
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:31:9-42
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:31:9-42
 activity#com.iaesteintern.testLogin
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:32:9-38:20
-	android:name
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:32:19-44
-intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:33:13-37:29
-action#android.intent.action.MAIN
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:34:17-69
-	android:name
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:34:25-66
-category#android.intent.category.LAUNCHER
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:36:17-77
-	android:name
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:36:27-74
-activity#com.iaesteintern.MainLogin
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:39:9-41:41
-	android:label
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:41:13-38
-	android:name
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:40:13-38
-activity#com.iaesteintern.MainCredits
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:42:9-44:42
-	android:label
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:44:13-39
-	android:name
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:43:13-40
-activity#com.iaesteintern.MainKalender
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:45:9-47:40
-	android:label
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:47:13-37
-	android:name
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:46:13-41
-activity#com.iaesteintern.MainBKTopTen
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:48:9-50:52
-	android:label
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:50:13-49
-	android:name
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:49:13-41
-activity#com.iaesteintern.MainInnstillinger
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:51:9-53:46
-	android:label
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:53:13-43
-	android:name
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:52:13-46
-activity#com.iaesteintern.MainMedlemslister
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:54:9-56:36
-	android:label
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:56:13-33
-	android:name
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:55:13-46
-activity#com.iaesteintern.MainNyheter
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:57:9-49
-	android:name
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:57:19-46
-activity#com.iaesteintern.MainHomeNav
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:58:9-61:61
-	android:label
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:60:13-29
+ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:32:9-39:20
 	android:theme
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:61:13-58
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:33:13-58
 	android:name
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:59:13-40
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:32:19-44
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:34:13-38:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:35:17-69
+	android:name
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:35:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:37:17-77
+	android:name
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:37:27-74
+activity#com.iaesteintern.MainLogin
+ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:40:9-42:41
+	android:label
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:42:13-38
+	android:name
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:41:13-38
+activity#com.iaesteintern.MainCredits
+ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:43:9-45:42
+	android:label
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:45:13-39
+	android:name
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:44:13-40
+activity#com.iaesteintern.MainKalender
+ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:46:9-48:40
+	android:label
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:48:13-37
+	android:name
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:47:13-41
+activity#com.iaesteintern.MainBKTopTen
+ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:49:9-51:52
+	android:label
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:51:13-49
+	android:name
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:50:13-41
+activity#com.iaesteintern.MainInnstillinger
+ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:52:9-54:46
+	android:label
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:54:13-43
+	android:name
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:53:13-46
+activity#com.iaesteintern.MainMedlemslister
+ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:55:9-57:36
+	android:label
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:57:13-33
+	android:name
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:56:13-46
+activity#com.iaesteintern.MainNyheter
+ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:58:9-49
+	android:name
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:58:19-46
+activity#com.iaesteintern.MainHomeNav
+ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:59:9-62:61
+	android:label
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:61:13-29
+	android:theme
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:62:13-58
+	android:name
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:60:13-40
 activity#com.iaesteintern.MainPerson
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:62:9-64:67
+ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:63:9-65:67
 	android:label
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:64:13-64
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:65:13-64
 	android:name
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:63:13-39
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:64:13-39
 activity#com.iaesteintern.MainKalendarEvent
-ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:65:9-64
+ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:66:9-54
 	android:name
-		ADDED from C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:65:19-52
+		ADDED from C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\src\main\AndroidManifest.xml:66:19-52
 activity#android.support.v7.widget.TestActivity
-ADDED from [com.android.support:recyclerview-v7:21.0.3] C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.3\AndroidManifest.xml:18:9-115
+ADDED from [com.android.support:recyclerview-v7:21.0.3] C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.3\AndroidManifest.xml:18:9-115
 	android:label
-		ADDED from [com.android.support:recyclerview-v7:21.0.3] C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.3\AndroidManifest.xml:18:19-59
+		ADDED from [com.android.support:recyclerview-v7:21.0.3] C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.3\AndroidManifest.xml:18:19-59
 	android:name
-		ADDED from [com.android.support:recyclerview-v7:21.0.3] C:\Users\EddiStat\Documents\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.3\AndroidManifest.xml:18:60-113
+		ADDED from [com.android.support:recyclerview-v7:21.0.3] C:\Users\Edvard\AndroidStudioProjects\iaeste_inter\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.3\AndroidManifest.xml:18:60-113

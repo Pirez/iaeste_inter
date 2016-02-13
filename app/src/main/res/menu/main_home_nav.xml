@@ -1,5 +1,10 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_settings"
-        android:title="@string/update_text_02" />
+        android:id="@+id/action_update"
+        android:title="@string/update_text_02"
+        android:icon="@drawable/ic_cached_24dp"
+        android:background="?android:attr/selectableItemBackground"
+        app:showAsAction="always"
+        />
 </menu>

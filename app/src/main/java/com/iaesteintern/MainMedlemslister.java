@@ -100,16 +100,13 @@ public class MainMedlemslister extends ListActivity implements Runnable {
         imgUser = (ImageView) findViewById(R.id.user_img);
 
 
-     //   final SharedPreferences innstillinger = getSharedPreferences("Innstillinger", MODE_PRIVATE);
-     //   SharedPreferences.Editor inn = innstillinger.edit();
+        //   final SharedPreferences innstillinger = getSharedPreferences("Innstillinger", MODE_PRIVATE);
+        //   SharedPreferences.Editor inn = innstillinger.edit();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             getWindow().setStatusBarColor(getResources().getColor(R.color.secondary));
         }
-
-
-
 
 
         class LoadingStream extends AsyncTask<String, Void, Integer> {
@@ -149,41 +146,32 @@ public class MainMedlemslister extends ListActivity implements Runnable {
 
                             i2++;
                             b2 = i2;
-                        }
-                        else if (medlemlister_lk.get(j).matches(bergen_hex)) {
+                        } else if (medlemlister_lk.get(j).matches(bergen_hex)) {
                             //Bergen
                             for (int j0 = 0; j0 < words; j0++)
                                 medlem_data[0][j0][i0] = convertHexToString(getWord(medlemlister_data.get(j), '*', j0));
                             i0++;
                             b0 = i0;
-                        }
-
-                        else if (medlemlister_lk.get(j).matches(grimstad_hex)) {
+                        } else if (medlemlister_lk.get(j).matches(grimstad_hex)) {
                             //Grimstad
                             for (int j1 = 0; j1 < words; j1++)
                                 medlem_data[1][j1][i1] = convertHexToString(getWord(medlemlister_data.get(j), '*', j1));
                             i1++;
                             b1 = i1;
-                        }
-
-                        else if (medlemlister_lk.get(j).matches(stavanger_hex)) {
+                        } else if (medlemlister_lk.get(j).matches(stavanger_hex)) {
                             //Stavanger
                             for (int j5 = 0; j5 < words; j5++)
                                 medlem_data[5][j5][i5] = convertHexToString(getWord(medlemlister_data.get(j), '*', j5));
                             i5++;
                             b5 = i5;
 
-                        }
-
-                        else if (medlemlister_lk.get(j).matches(tromso_hex)) {
+                        } else if (medlemlister_lk.get(j).matches(tromso_hex)) {
                             //Tromsø
                             for (int j4 = 0; j4 < words; j4++)
                                 medlem_data[4][j4][i4] = convertHexToString(getWord(medlemlister_data.get(j), '*', j4));
                             i4++;
                             b4 = i4;
-                        }
-
-                        else if (medlemlister_lk.get(j).matches(trondheim_hex)) {
+                        } else if (medlemlister_lk.get(j).matches(trondheim_hex)) {
                             //Trondheim
 
                             for (int j3 = 0; j3 < words; j3++)
@@ -191,9 +179,7 @@ public class MainMedlemslister extends ListActivity implements Runnable {
 
                             i3++;
                             b3 = i3;
-                        }
-
-                        else if (medlemlister_lk.get(j).matches(aas_hex)) {
+                        } else if (medlemlister_lk.get(j).matches(aas_hex)) {
                             //Ås
                             for (int j6 = 0; j6 < words; j6++)
                                 medlem_data[6][j6][i6] = convertHexToString(getWord(medlemlister_data.get(j), '*', j6));
@@ -229,7 +215,6 @@ public class MainMedlemslister extends ListActivity implements Runnable {
 
         //setter lk list som default når du kommer inn
         lk_list();
-
 
 
         ListView lister = getListView();
@@ -275,7 +260,7 @@ public class MainMedlemslister extends ListActivity implements Runnable {
     }
 
 
-    private void setActionBarTitle (String actionBarTitle) {
+    private void setActionBarTitle(String actionBarTitle) {
         SpannableString s = new SpannableString(actionBarTitle);
         s.setSpan(new TypefaceSpan(this, "iaesteFontBold.ttf"), 0, s.length(),
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -355,55 +340,52 @@ public class MainMedlemslister extends ListActivity implements Runnable {
 
 
     public boolean onOptionsItemSelected(MenuItem item) {
-            switch (item.getItemId()) {
+        switch (item.getItemId()) {
 
 
-
-
-
-                //Aktivere listene med en string array, må redusere størreslen på array, siden den er definert som 100 elementer
-                case R.id.Bergen:
-                    lk_active = 0;
-                    lk_active(lk_active);
+            //Aktivere listene med en string array, må redusere størreslen på array, siden den er definert som 100 elementer
+            case R.id.Bergen:
+                lk_active = 0;
+                lk_active(lk_active);
                 /*
                 String[] navneliste_bergen = new String[i0];
                 System.arraycopy(medlem_data[lk_active][0], 0, navneliste_bergen, 0, i0);
                 setListAdapter(new ArrayAdapter<String>(this, R.layout.main_medlemslister, R.id.label, navneliste_bergen));
                 setTitle("IAESTE intern - LK Bergen " + Integer.toString(navneliste_bergen.length) + " medlemmer");
                  */
-                    return true;
+                return true;
 
-                case R.id.Grimstad:
-                    lk_active = 1;
-                    lk_active(lk_active);
-                    return true;
+            case R.id.Grimstad:
+                lk_active = 1;
+                lk_active(lk_active);
+                return true;
 
-                case R.id.Oslo:
-                    //String[] navneliste_oslo = (String[]) medlemlister_navn_oslo.toArray(new String[medlemlister_navn_oslo.size()]);
-                    // setListAdapter(new ArrayAdapter<String>(this, R.layout.main_medlemslister, R.id.label, navneliste_oslo));
-                    lk_active = 2;
-                    lk_active(lk_active);
-                    return true;
+            case R.id.Oslo:
+                //String[] navneliste_oslo = (String[]) medlemlister_navn_oslo.toArray(new String[medlemlister_navn_oslo.size()]);
+                // setListAdapter(new ArrayAdapter<String>(this, R.layout.main_medlemslister, R.id.label, navneliste_oslo));
+                lk_active = 2;
+                lk_active(lk_active);
+                return true;
 
-                case R.id.Trondheim:
-                    lk_active = 3;
-                    lk_active(lk_active);
-                    return true;
+            case R.id.Trondheim:
+                lk_active = 3;
+                lk_active(lk_active);
+                return true;
 
-                case R.id.Tromso:
-                    lk_active = 4;
-                    lk_active(lk_active);
-                    return true;
+            case R.id.Tromso:
+                lk_active = 4;
+                lk_active(lk_active);
+                return true;
 
-                case R.id.Stavanger:
-                    lk_active = 5;
-                    lk_active(lk_active);
-                    return true;
+            case R.id.Stavanger:
+                lk_active = 5;
+                lk_active(lk_active);
+                return true;
 
-                case R.id.As:
-                    lk_active = 6;
-                    lk_active(lk_active);
-                    return true;
+            case R.id.As:
+                lk_active = 6;
+                lk_active(lk_active);
+                return true;
 
             case android.R.id.home:
                 // This is called when the Home (Up) button is pressed
@@ -637,36 +619,36 @@ public class MainMedlemslister extends ListActivity implements Runnable {
                 new ArrayList<ContentProviderOperation>();
 
         ops.add(ContentProviderOperation.newInsert(
-                ContactsContract.RawContacts.CONTENT_URI)
-                .withValue(ContactsContract.RawContacts.ACCOUNT_TYPE, null)
-                .withValue(ContactsContract.RawContacts.ACCOUNT_NAME, null)
-                .build()
+                        ContactsContract.RawContacts.CONTENT_URI)
+                        .withValue(ContactsContract.RawContacts.ACCOUNT_TYPE, null)
+                        .withValue(ContactsContract.RawContacts.ACCOUNT_NAME, null)
+                        .build()
         );
 
         //------------------------------------------------------ Names
         if (DisplayName != null) {
             ops.add(ContentProviderOperation.newInsert(
-                    ContactsContract.Data.CONTENT_URI)
-                    .withValueBackReference(ContactsContract.Data.RAW_CONTACT_ID, 0)
-                    .withValue(ContactsContract.Data.MIMETYPE,
-                            ContactsContract.CommonDataKinds.StructuredName.CONTENT_ITEM_TYPE)
-                    .withValue(
-                            ContactsContract.CommonDataKinds.StructuredName.DISPLAY_NAME,
-                            DisplayName).build()
+                            ContactsContract.Data.CONTENT_URI)
+                            .withValueBackReference(ContactsContract.Data.RAW_CONTACT_ID, 0)
+                            .withValue(ContactsContract.Data.MIMETYPE,
+                                    ContactsContract.CommonDataKinds.StructuredName.CONTENT_ITEM_TYPE)
+                            .withValue(
+                                    ContactsContract.CommonDataKinds.StructuredName.DISPLAY_NAME,
+                                    DisplayName).build()
             );
         }
 
         //------------------------------------------------------ Mobile Number
         if (tlf != null) {
             ops.add(ContentProviderOperation.
-                    newInsert(ContactsContract.Data.CONTENT_URI)
-                    .withValueBackReference(ContactsContract.Data.RAW_CONTACT_ID, 0)
-                    .withValue(ContactsContract.Data.MIMETYPE,
-                            ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE)
-                    .withValue(ContactsContract.CommonDataKinds.Phone.NUMBER, tlf)
-                    .withValue(ContactsContract.CommonDataKinds.Phone.TYPE,
-                            ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE)
-                    .build()
+                            newInsert(ContactsContract.Data.CONTENT_URI)
+                            .withValueBackReference(ContactsContract.Data.RAW_CONTACT_ID, 0)
+                            .withValue(ContactsContract.Data.MIMETYPE,
+                                    ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE)
+                            .withValue(ContactsContract.CommonDataKinds.Phone.NUMBER, tlf)
+                            .withValue(ContactsContract.CommonDataKinds.Phone.TYPE,
+                                    ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE)
+                            .build()
             );
         }
 
@@ -755,7 +737,7 @@ public class MainMedlemslister extends ListActivity implements Runnable {
     }
 
 
-        public void popup_window(final String popup_navn, final String popup_tlf, final String popup_email, final String url, Context context, final String popup_lk, final String popup_verv) {
+    public void popup_window(final String popup_navn, final String popup_tlf, final String popup_email, final String url, Context context, final String popup_lk, final String popup_verv) {
 
 
         final Dialog dialog = new Dialog(MainMedlemslister.this);
@@ -795,7 +777,6 @@ public class MainMedlemslister extends ListActivity implements Runnable {
         //Sjekker hvis du skal laste ned bilde, eller hvis det ikje finnes bilder
 
 
-
         if (url.matches("empty")) {
 
             imgView = (ImageView) dialog.findViewById(R.id.bilde_popup_kalender);
@@ -831,7 +812,6 @@ public class MainMedlemslister extends ListActivity implements Runnable {
             imgView = (ImageView) dialog.findViewById(R.id.bilde_popup_kalender);
             //handler.sendEmptyMessage(0); // close progressbar
             new DownloadImageTask().execute(URL_LINK);
-
 
 
         } else {

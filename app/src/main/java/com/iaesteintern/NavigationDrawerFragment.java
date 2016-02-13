@@ -279,6 +279,16 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
 
                 break;
 
+            case "18":
+                textLC.setText("LK Bergen");
+                Picasso.with(getActivity())
+                        .load(R.drawable.bergen)
+                        .fit()
+                        .into(imgBackground);
+
+
+                break;
+
             case "20":
                 textLC.setText("LK Oslo");
 
